@@ -1,32 +1,97 @@
-print("Hello World")
+# print("Hello World")
+#
+# #Andrew Esparza
+# #this is python 2.7
+#
+# a=4
+# b=3
+#
+# print(3 + 5)
+# print(5 - 3)
+# print(3 * 5)
+# print(6 / 2)
+# print(3 ** 2)
+#
+# print()# this makes a new line. In python 3.6,it looks like: print()
+# print("see if you can figure this out")
+# print(14%5) # this is time 12 is the modulies #its like a mixed fraction, but the whole numbers are gone now and the denominater
+#
+# car_name= "weibe moble"
+# car_type= "Tesla"
+# car_cylinders= 8
+# car_mgp=9000.1
+#
+# #Inline printing
+# print("I have a car called the %s"% car_name)   #%s string
+# print("I have a car called the %s").It's a%s" % (car_name, car_type))
+#
+# #asking for imput
+# name = input("what is your name?")
+# print("hello %s," % name)
+# Age = input("how old are you?")
+# print("%s?! wow, you are really old!") % Age
 
-#Andrew Esparza
-#this is python 2.7
+#function
 
-a=4
-b=3
 
-print(3 + 5)
-print(5 - 3)
-print(3 * 5)
-print(6 / 2)
-print(3 ** 2)
+def print_hw():
+    print("hello world")
 
-print()# this makes a new line. In python 3.6,it looks like: print()
-print("see if you can figure this out")
-print(14%5) # this is time 12 is the modulies #its like a mixed fraction, but the whole numbers are gone now and the denominater
 
-car_name= "weibe moble"
-car_type= "Tesla"
-car_cylinders= 8
-car_mgp=9000.1
+print_hw()
+print_hw()
+print_hw()
 
-#Inline printing
-print("I have a car called the %s"% car_name)   #%s string
-print("I have a car called the %s").It's a%s" % (car_name, car_type))
+def say_hi(name):
+    print("hello %s." %name)
+    print("enjoy your day.")
 
-#asking for imput
-name = input(what is your name? ")
-print("hello %s," % name))
-Age = input("how old are you?")
-print("%s?! wow, you are really old!") % Age
+say_hi("john")
+
+
+def print_age(name,age):
+    print("%s is %d years old." %(name, age))
+    age = age + 1 #age = age + 1
+    print("Next year, they will be %d" % age)
+
+
+print_age("john", 15)
+
+
+def f(x):
+    return x**3+4*x**2+7*x-4
+
+
+print(f(3))
+print(f(4))
+print(f(5))
+
+
+
+
+
+#if statements
+
+
+def grade_calc(percentage):
+    if percentage >= 90:
+        return "A"
+    elif percentage >= 80 :
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >=60:
+        return "D"
+    elif percentage >=50:
+        return "F"
+    elif percentage >=40:
+        return "F"
+    elif percentage >=30:
+        return "F"
+    elif percentage >=20:
+        return "F"
+    elif percentage >=10:
+        return "F"
+    elif percentage >=0:
+        return "NA"
+    
