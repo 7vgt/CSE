@@ -94,4 +94,33 @@ def grade_calc(percentage):
         return "F"
     elif percentage >=0:
         return "NA"
-    
+
+
+def happy_bday(name):
+    print("Happy birthday to you" + ",")
+    print("Happy birthday to you" + ",")
+    print("Happy birthday dear %s," % name)
+    print("Happy birthday to you" + ".")
+
+
+happy_bday("John")
+
+
+# Loops
+
+for num in range(100):
+    print(num + 1)
+
+
+a = 1
+while a < 10:
+    print(a)
+    a += 1
+
+
+#random numbers
+import random   # This shoulkd be on line 1
+print(random.randint(0,100))
+
+
+
