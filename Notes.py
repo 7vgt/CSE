@@ -122,5 +122,25 @@ while a < 10:
 import random   # This shoulkd be on line 1
 print(random.randint(0,100))
 
+#comparisons
+print(1==1) #is1 equal to 1
+print(1!=2) # is 1 not eqaul to 2?
+print(10 <=15)
+print(not False)
 
 
+
+#recasting
+
+c = '1'
+print(c ==1)
+print(int (c) == 1)  #both are ints
+print(c == str(1))  #both are strings
+
+# input command ALWAYS gives a string
+
+#generat random number first for project
+# Second take an input (number) from the user
+#third compare input to generate number
+#fourth add higher and lower statements
+#fitfth add 5 guesses
