@@ -1,13 +1,14 @@
 import random
 print(random.randint(1,50))
 
-print("What Will The Number Be?")
+print("Guess The Number")
+
+guess = input()
+
+15==15
+str(num)==guess
 
 
-def answer_now():
-    my_guess = input("my guess")
-    correct_number = input("random")
-    print("%s,%s" % (my_guess,correct_number))
 
 
 
