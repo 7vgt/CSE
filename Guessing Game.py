@@ -1,27 +1,26 @@
-print("hello welcome to guess game!")
-
 import random
-print(random.randint(1,50))
 
-print("Guess The Number bellow")
+guesses = 5
 
-guess = input()
+number = random.randint(0, 100)
 
-15==15
+win = False
 
-num=guess
+while guesses > 0:
+    guess = int(input("Guess: "))
 
-str(num)==guess
+    guesses -= 1
 
-#import random f = 0 num = random.randint(1, 100) print "I'm thinking of an number between 1 and 100. Guess it!" while f == 0: # Convert to "input" from "raw_input" to work with 3.x theGuess = int(raw_input("Your guess: ")) if theGuess == num: print "Great Job!"
+    if guess > number:
+        print("Too High", guesses, "remaining")
+    elif guess < number:
+        print("Too Low", guesses, "remaining")
+    elif guess - number < 6:
+        print("You are very close")
+    else:
+        print("Congrats, you Won The game")
+        win = True
+        guesses = 0
 
-
-
-
-
-
-
-
-
-
-
+if win == False:
+    print("Sorry,Try Again Next Time", number)
