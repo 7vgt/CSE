@@ -2,7 +2,7 @@ import random
 
 guesses = 5
 
-number = random.randint(0, 100)
+number = random.randint(0, 50)
 
 win = False
 

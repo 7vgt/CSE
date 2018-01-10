@@ -1,25 +1,53 @@
-print ("welcome to lucky 7's")
+
+print("welcome to lucky 7's")
 
 import random
-number = random.randint(2,12)
-
-round = False
-
-while money > 0:
-    money = int(input("Guess:"))
-
-    guesses -=20
 
 
-if round > money:
-    print("you lost 1 dollar")
-    else:
-        print("Congrats, you Won The game")
-        win = True
-        round=0
+A = dice1=(random.randint(1,6))
+B = dice2=(random.randint(1,6))
 
-if win == False:
-    print("Sorry,Try Again Next Time", number)
+money = 15
+
+if A+B == 7:
+    print("you won 7""A+b")
+elif A+B >= 7:
+    print("You Lost To bad To Sad""A+B")
+
+
+
+
+for num in range(15):
+    print(num - 1)
+
+
+a = 1
+while a < 10:
+    print(a)
+    a += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
