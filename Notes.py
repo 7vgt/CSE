@@ -33,7 +33,7 @@
 
 #function
 
-
+"""
 def print_hw():
     print("hello world")
 
@@ -143,4 +143,42 @@ print(c == str(1))  #both are strings
 # Second take an input (number) from the user
 #third compare input to generate number
 #fourth add higher and lower statements
-#fitfth add 5 guesses
+#fitfth add 5 guesse
+
+# Notes 1/18/2018
+"""
+# list
+
+the_count = [1, 2, 3, 4, 5]
+shopping_list = ["noodles", "Eggrolls","Milk", "Rice","soda"]
+
+print(shopping_list[2])
+
+print(len(shopping_list))
+
+# going through a list
+
+for item in shopping_list:
+    print(item)
+
+for num in the_count:
+    print(num*2)
+
+len(shopping_list)   # gives me the length of the shopping list
+range(3)  # gives a list of numbers 0 through 2
+range(len(shopping_list))  # A LIST OF EVERY INDEX IN A LIST
+
+
+for num in range(len(shopping_list)):
+    item = shopping_list[num]
+    print("The item at index %d is %s" % (num, item))
+
+
+# turns into a list
+str1 = "Hello class!"
+listOne = list(str1)
+print(listOne)
+listOne[11] = '.'
+print(listOne)
+print("".join(listOne))
+
