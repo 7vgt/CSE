@@ -182,3 +182,30 @@ listOne[11] = '.'
 print(listOne)
 print("".join(listOne))
 
+# adds things to a list
+
+shopping_list.append("Editing Desktop")
+shopping_list.append("ceral")
+print(shopping_list)
+
+
+# Removing things from the list
+shopping_list.remove("soda")
+print(shopping_list)
+shopping_list.pop(0)
+print(shopping_list)
+
+# The string class
+import string
+print(string.ascii_letters)
+print(string.ascii_lowercase)
+print(string.punctuation)
+print(string.digits)
+
+# Dealing with strings
+strTwo = "THis iS a Very OdD SeNteNCe"
+lowercase = strTwo.lower()
+print (lowercase)
+
+
+
