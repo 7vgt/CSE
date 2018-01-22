@@ -1,4 +1,5 @@
 import random
+import string
 
 
 """
@@ -13,6 +14,10 @@ A General Guide for HangMan
 """
 
 the_count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-Word_bank = ["futuristic house", "milk and cookies", "snowy forest", "boomerang","spooky house","video games",
-             "do you know the way","raindrop","jellyfish","thirtyvirus"]
 
+word_bank = ["futuristic house", "milk and cookies", "snowy forest", "boomerang","spooky house","video games",
+             "do you know the way","raindrop","jellyfish","thirtyvirus"]
+item = random.choice(word_bank)
+print(item)
+
+guess = int(input("Guess: "))

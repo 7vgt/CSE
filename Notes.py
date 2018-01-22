@@ -154,8 +154,7 @@ shopping_list = ["noodles", "Eggrolls","Milk", "Rice","soda"]
 
 print(shopping_list[2])
 
-print(len(shopping_list))
-
+print(len(shopping_list)) # Shows amount of items in list
 # going through a list
 
 for item in shopping_list:
