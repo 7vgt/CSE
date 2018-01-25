@@ -4,26 +4,40 @@ the_count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 guesses = 10
 
-star_bank = ["********** *****", "**** *** *******", "***** ******", "********* ******", "****** *****", "***** ****",
-             "** *** **** *** ***", "******** *******", "*********", "**********"]
+letters_guessed = []
 
-letters_guessed = ["abcdefghijklmnopqrstuvwxyz"]
-
-word_bank = ["futuristic house", "milk and cookies", "snowy forest", "boomerang effect","spooky house","video game",
+word_bank = ["futuristic house", "milk and cookies", "snowy forest", "boomerang","spooky house","video game",
              "do you know the way","raindrop droptop","jellyfish","thirtyvirus"]
 
-item = random.choice(word_bank)
+word = random.choice(word_bank)
 
-if the_count[1] == star_bank:
-    print("You guessed the word, Congratulations YOU WIN!!!")
+range_of_letters = len(word)
 
+word_selector_stars = range_of_letters * "*"
 
-if word_bank == star_bank:
+if word == "futuristic house":
+    word_selector_stars = "********** *****"
 
+if word == "milk and cookies":
+    word_selector_stars = "**** *** *******"
 
+if word == "snowy forest":
+    word_selector_stars = "***** ******"
 
+if word == "spooky house":
+    word_selector_stars = "****** *****"
 
-  if letters_guessed = word_bank[1]:
+if word == "video game":
+    word_selector_stars = "***** ****"
+
+if word == "do you know the way":
+        word_selector_stars = "** *** **** *** ***"
+
+if word == "raindrop droptop":
+    word_selector_stars = "******** *******"
+
+print(word_selector_stars)
+
 
 
 while guesses > 0:
