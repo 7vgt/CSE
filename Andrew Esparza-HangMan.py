@@ -1,37 +1,43 @@
 import random
-import string
-
-
-"""
-
-A General Guide for HangMan
-1. Make a word Bank- 10 items
-2.pick a random item form the list
-3.
-4.Receal letters already guessed
-5.create the win condition
-
-"""
-guess = 10
-
-while guess > 0:
-
-letters_guessed = []
-
-guesses_left =  10
 
 the_count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-word_bank = ["futuristic house", "milk and cookies", "snowy forest", "boomerang","spooky house","video games",
-             "do you know the way","raindrop","jellyfish","thirtyvirus"]
+guesses = 10
 
-item = random.choice(word_bank)
+letters_guessed = []
 
-print(item)
+word_bank = ["futuristic house", "milk and cookies", "snowy forest", "boomerang","spooky house","video game",
+             "do you know the way","raindrop droptop","jellyfish","thirtyvirus"]
 
-word_bank = list(str1)
+word = random.choice(word_bank)
 
-if input = word_bank[1]:
-   print (word_bank[1])
+range_of_letters = len(word)
 
-letters_guessed = (input("Guess: "))
+word_selector_stars = range_of_letters * "*"
+
+if word == "futuristic house":
+    word_selector_stars = "********** *****"
+
+if word == "milk and cookies":
+    word_selector_stars = "**** *** *******"
+
+if word == "snowy forest":
+    word_selector_stars = "***** ******"
+
+if word == "spooky house":
+    word_selector_stars = "****** *****"
+
+if word == "video game":
+    word_selector_stars = "***** ****"
+
+if word == "do you know the way":
+        word_selector_stars = "** *** **** *** ***"
+
+if word == "raindrop droptop":
+    word_selector_stars = "******** *******"
+
+print(word_selector_stars)
+
+while guesses > 0:
+        guess = int(input("Guess: "))
+        guesses -= 1

@@ -1,5 +1,7 @@
 import random
 
+print("Welcome to Hangman")
+
 the_count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 guesses = 10
@@ -37,8 +39,6 @@ if word == "raindrop droptop":
     word_selector_stars = "******** *******"
 
 print(word_selector_stars)
-
-
 
 while guesses > 0:
         guess = int(input("Guess: "))
