@@ -1,5 +1,7 @@
 import random
 
+win = "False"
+
 the_count = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 guesses = 10
@@ -36,8 +38,13 @@ if word == "do you know the way":
 if word == "raindrop droptop":
     word_selector_stars = "******** *******"
 
-print(word_selector_stars)
-
 while guesses > 0:
-        guess = int(input("Guess: "))
-        guesses -= 1
+    print(word_selector_stars)
+    print(word)
+    guess = input("Guess: ")
+    guess = guess.lower()
+    guesses -= 1
+
+    if guess == word:
+        print("you win")
+        guesses = 0

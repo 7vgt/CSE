@@ -41,5 +41,8 @@ if word == "raindrop droptop":
 print(word_selector_stars)
 
 while guesses > 0:
-        guess = int(input("Guess: "))
+        letters_guessed = input("Guess: ")
         guesses -= 1
+if guesses == word:
+    print("you guessed the word")
+
