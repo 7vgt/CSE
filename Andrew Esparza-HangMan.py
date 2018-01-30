@@ -44,7 +44,17 @@ while guesses > 0:
     guess = input("Guess: ")
     guess = guess.lower()
     guesses -= 1
+    output = []
+    for letter in word:
+        if letter in letters_guessed:
+            output.append(letter)
+        else:
+            output.append("*")
+            print(output)
+            letters_guessed.append(guess)
+            print(letters_guessed)
 
-    if guess == word:
+
+ if guess == word:
         print("you win")
         guesses = 0
