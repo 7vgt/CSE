@@ -41,20 +41,17 @@ if word == "raindrop droptop":
 while guesses > 0:
     print(word_selector_stars)
     print(word)
-    guess = input("Guess: ")
-    guess = guess.lower()
-    guesses -= 1
     output = []
     for letter in word:
         if letter in letters_guessed:
             output.append(letter)
         else:
             output.append("*")
-            print(output)
-            letters_guessed.append(guess)
-            print(letters_guessed)
-
-
- if guess == word:
+    guess = input("Guess: ")
+    guesses -= 1
+    print(output)
+    guess_lowercase = guess.lower()
+    letters_guessed.append(guess_lowercase)
+    if letters_guessed == word:
         print("you win")
-        guesses = 0
+        guess = 0
