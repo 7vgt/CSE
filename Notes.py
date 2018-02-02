@@ -146,7 +146,7 @@ print(c == str(1))  #both are strings
 #fitfth add 5 guesse
 
 # Notes 1/18/2018
-"""
+
 # list
 
 the_count = [1, 2, 3, 4, 5]
@@ -205,6 +205,44 @@ print(string.digits)
 strTwo = "THis iS a Very OdD SeNteNCe"
 lowercase = strTwo.lower()
 print (lowercase)
+"""
+# Dictionaries - made up of key! value parts
+dictionary = {'name':'lance', 'age':23, 'height': 6 * 12 + 6}
 
+# accessiny dictionaries
+print(dictionary['name'])
+print(dictionary['age'])
+print(dictionary['height'])
 
+large_dictionary = {
+    'CA': 'California',
+    'FL': 'Florida',
+    'OH': 'Ohio'
+}
 
+print(large_dictionary['CA'])
+print(large_dictionary['FL'])
+print(large_dictionary['OH'])
+
+larger_dictionary = {
+    'CA': ['Fresno',
+           'Sacramento',
+           'Los Angeles'
+           ],
+    'FL': [
+        "Tampa",
+        "Orlando",
+        "Miami"
+    ],
+    'OH': [
+        "Cleavland",
+        "Cincinnati",
+        "Toledo"
+    ]
+}
+
+print(larger_dictionary['FL'])
+larger_dictionary["FL"][2]
+print(larger_dictionary["FL"][2])
+larger_dictionary["OH"][1]
+print(larger_dictionary["OH"][1])
