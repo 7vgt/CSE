@@ -207,42 +207,78 @@ lowercase = strTwo.lower()
 print (lowercase)
 """
 # Dictionaries - made up of key! value parts
-dictionary = {'name':'lance', 'age':23, 'height': 6 * 12 + 6}
+dictionary = {'name': 'Lance', 'age': 26, 'height': 6 * 12 + 2}
 
-# accessiny dictionaries
+# Accessing things from a dictionary
 print(dictionary['name'])
 print(dictionary['age'])
 print(dictionary['height'])
 
+# Add a pair to a dictionary
+dictionary["profession"] = "telemarketer"
+
 large_dictionary = {
     'CA': 'California',
-    'FL': 'Florida',
-    'OH': 'Ohio'
+    'AZ': 'Arizona',
+    'NY': 'New York'
 }
-
-print(large_dictionary['CA'])
-print(large_dictionary['FL'])
-print(large_dictionary['OH'])
+print(large_dictionary['NY'])
 
 larger_dictionary = {
-    'CA': ['Fresno',
-           'Sacramento',
-           'Los Angeles'
-           ],
-    'FL': [
-        "Tampa",
-        "Orlando",
-        "Miami"
+    'CA': [
+        'Fresno',
+        "San Francisco",
+        "San Jose"
     ],
-    'OH': [
-        "Cleavland",
-        "Cincinnati",
-        "Toledo"
+    'AZ': [
+        "Phoenix",
+        "Tuscon"
+    ],
+    'NY': [
+        "New York City",
+        "Brooklyn",
     ]
 }
+print(larger_dictionary['NY'])
+print(larger_dictionary['NY'][1])
+print(larger_dictionary["AZ"][0])
 
-print(larger_dictionary['FL'])
-larger_dictionary["FL"][2]
-print(larger_dictionary["FL"][2])
-larger_dictionary["OH"][1]
-print(larger_dictionary["OH"][1])
+largest_dictionary = {
+    'CA': {
+        'NAME': 'California',
+        'POPULATION': 39250000,
+        'BORDER ST': [
+            'Oregon',
+            'Nevada',
+            'Arizona'
+        ]
+    },
+    'AZ': {
+        'NAME': 'Arizona',
+        'POPULATION': 6931000,
+        'BORDER ST': [
+            'California',
+            'Utah',
+            'Nevada',
+            'New Mexico'
+        ]
+    },
+    'NY': {
+        'NAME': "New York",
+        'POPULATION': 19750000,
+        'BORDER ST': [
+            'Vermont',
+            'Massachusetts',
+            'Connecticut',
+            'Pennsylvania',
+            'New Jersey'
+        ]
+    }
+}
+current_node = largest_dictionary['CA'] # If you change the state inicials in the boxed bracets you change the rest of the information
+print(current_node)
+print(current_node['NAME'])
+print(current_node['POPULATION'])
+print(current_node['BORDER ST'])
+
+
