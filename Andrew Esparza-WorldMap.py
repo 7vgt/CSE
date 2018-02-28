@@ -2,9 +2,9 @@ world_map = {
     'VROOM': {
         'NAME': "Vicky's room",
         'DESCRIPTION': 'you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on '
-                       'the shelf, theres a locked door north and a open door East w',
+                       'the shelf, there is a strange small opening in the wall north and a open door East w',
         'PATHS': {
-            'NORTH': 'LOCKEDDOOR',
+            'NORTH': 'SECRETROOM',
             'EAST': 'HALLWAY'
         }
      },
@@ -15,28 +15,22 @@ world_map = {
             'NORTH':'HALLWAY'
         }
     },
-    'MASTERBATHROOM2': {
+    'MASTERBATHROOM1': {
         'NAME':'Master Bathroom 2',
         'DESCRIPTION':"The room is filled with pictures of you "
                       "and has posters of princesses lets hurry theres a exit West and North",
         'PATHS': {
             'NORTH': 'LIVING ROOM',
             'WEST': 'HALLWAY'
-        }
-    },
-    'PORCH': {
-        'NAME': "Porch",
-        'DESCRIPTION': 'You Have Escaped Vickys House you win',
-        'PATHS': {
-            'NORTH': 'MAINLIVINGROOM',
-            'EAST': 'Street'
+
         }
     },
     'MAINLIVINGROOM': {
         'NAME': 'main living room',
         'DESCRIPTION': "not much just a couch, a firplace, and a TV",
         'PATHS': {
-            'NORTH': 'HALLWAY'
+            'NORTH': 'KITCHEN',
+            'SOUTH':'PORCH'
         }
     },
     'Mom/Dad': {
@@ -47,14 +41,7 @@ world_map = {
             'EAST': 'MASTERBEDROOM1',
             'SOUTH': 'HALLWAY'
         }
-    },
-    "MASTERBATHROOM1": {
-        'NAME': "Mom and Dad's bathroom",
-        'DESCRIPTION': "The room is filled with pictures of you "
-                       "and has posters of princesses lets hurry theres a exit West and North",
-        'PATHS': {
-            'WEST': 'MOMANDDADSROOM',
-        }
+
     },
     'HALLWAY' : {
         'NAME': 'Main Hallway',
@@ -66,71 +53,66 @@ world_map = {
             'EAST': 'MAINBATHROOM2'
         }
     },
-    'OUTSIDE': {
-        'Name': 'OUTSIDE',
-        'DESCRIPTION': 'nothing but a sand pit with a treasure chest that is empty',
-        'PATHS': {
-            'SOUTH': 'DINNINGROOM',
-            'EAST': 'TREEHOUSE'
-}
-    },
-    'HALLWAY': {
+    'HALLWAY1': {
         'NAME': 'OUTSIDE',
         'DESCRIPTION': 'nothing but a sand pit with a treasure chest that is empty',
         'PATHS': {
-            'SOUTH': 'DINNINGROOM',
-            'EAST': 'TREEHOUSE'
-},
+            'SOUTH':'KITCHEN',
+            'NORTH':'HALLWAY2'
+        },
     },
     'LIVINGROOM': {
-        'NAME': "Vicky's room",
+        'NAME': "Living Room",
         'DESCRIPTION': 'you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on '
                        'the shelf, theres a locked door north and a open door East w',
         'PATHS': {
-            'WEST': 'HALLWAY',
+            'EAST': 'KITCHEN',
             'SOUTH': 'HALLWAY'
         }
-     },
+    },
     'KITCHEN': {
         'NAME': 'Kitchen',
         'DESCRIPTION': "theres not much here just dust, webs, and a stair case that you came from that goes north",
         'PATHS': {
-            'NORTH':'HALLWAY'
+            'NORTH':'HALLWAY',
+            'SOUTH':'MAINLIVINGROOM',
+            'WEST':'LIVINGROOM',
+            'EAST':'GARAGE'
         }
     },
-    'MASTERBATHROOM2': {
+    'STREET': {
         'NAME':'MASTER BEDROOM 2',
         'DESCRIPTION':"The room is filled with pictures of you "
                       "and has posters of princesses lets hurry theres a exit West and North",
         'PATHS': {
-            'NORTH': 'HALLWAY',
-            'WEST': 'HALLWAY'
+            'EAST': 'YOUWIN',
+            'WEST': 'PORCH'
         }
     },
     'PORCH': {
         'NAME': "Porch",
         'DESCRIPTION': 'You Have Escaped Vickys House you win',
         'PATHS': {
-            'EAST': 'Street'
+            'EAST': 'Street',
+            'NORTH':'MAINLIVINGROOM'
         }
     },
-    'Main Living Room': {
+    'YOUWIN': {
         'NAME': 'The Attic',
         'DESCRIPTION': "theres not much here just dust, webs, and a stair case that you came from that goes north",
         'PATHS': {
-            'NORTH': 'HALLWAY'
+            'WEST': 'STREET'
         }
     },
-    'Mom/Dad': {
+    'GARAGE': {
         'NAME': 'MASTER BEDROOM 2',
         'DESCRIPTION': "The room is filled with pictures of you "
                        "and has posters of princesses lets hurry theres a exit West and North",
         'PATHS': {
-            'EAST': 'MASTERBEDROOM1',
-            'SOUTH': 'HALLWAY'
+            'WEST': 'KITCHEN'
         }
     },
-    'MASTERBATHROOM': {
+    'SECRETROOM': {
         'NAME': 'MASTER BEDROOM 2',
         'DESCRIPTION': "The room is filled with pictures of you "
                        "and has posters of princesses lets hurry theres a exit West and North",
@@ -151,17 +133,16 @@ world_map = {
         'PATHS': {
             'SOUTH': 'DINNINGROOM',
             'EAST': 'TREEHOUSE'
-}
+        }
     },
-    'HALLWAY': {
+    'TREEHOUSE': {
         'NAME': 'OUTSIDE',
         'DESCRIPTION': 'nothing but a sand pit with a treasure chest that is empty',
         'PATHS': {
             'SOUTH': 'DINNINGROOM',
             'EAST': 'TREEHOUSE'
-},
+        },
     }
-
 }
 
 

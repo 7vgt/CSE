@@ -39,5 +39,4 @@ def pythagorean(a,b):
     answer = inside ** 0.5
     return answer
 
-print(pythagorean(5,12) )
-
+print(pythagorean(5,12)
