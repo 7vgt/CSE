@@ -27,7 +27,7 @@ world_map = {
     },
     'MAINLIVINGROOM': {
         'NAME': 'main living room',
-        'DESCRIPTION': "not much just a couch, a firplace, and a TV",
+        'DESCRIPTION': "Not much here just a couch, a firplace, and a TV, oh wait oh no don't wake up vicky shes on the couch asleep.",
         'PATHS': {
             'NORTH': 'KITCHEN',
             'SOUTH':'PORCH'
@@ -35,13 +35,11 @@ world_map = {
     },
     'Mom/Dad': {
         'NAME': "vicky's mom and dads room",
-        'DESCRIPTION': "The room is filled with pictures of you "
-                       "and has posters of princesses lets hurry theres a exit West and North",
+        'DESCRIPTION': "The room is filled with a bed, nice paintings, and a fur rug ",
         'PATHS': {
             'EAST': 'MASTERBEDROOM1',
             'SOUTH': 'HALLWAY'
         }
-
     },
     'HALLWAY' : {
         'NAME': 'Main Hallway',
@@ -55,7 +53,7 @@ world_map = {
     },
     'HALLWAY1': {
         'NAME': 'OUTSIDE',
-        'DESCRIPTION': 'nothing but a sand pit with a treasure chest that is empty',
+        'DESCRIPTION': 'just a open hallway with family pictures',
         'PATHS': {
             'SOUTH':'KITCHEN',
             'NORTH':'HALLWAY2'
@@ -63,8 +61,7 @@ world_map = {
     },
     'LIVINGROOM': {
         'NAME': "Living Room",
-        'DESCRIPTION': 'you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on '
-                       'the shelf, theres a locked door north and a open door East w',
+        'DESCRIPTION': 'There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace',
         'PATHS': {
             'EAST': 'KITCHEN',
             'SOUTH': 'HALLWAY'
@@ -72,7 +69,7 @@ world_map = {
     },
     'KITCHEN': {
         'NAME': 'Kitchen',
-        'DESCRIPTION': "theres not much here just dust, webs, and a stair case that you came from that goes north",
+        'DESCRIPTION': "The kitchen is filled to the brim with food a fridge and a couple fresh pies on the counters.",
         'PATHS': {
             'NORTH':'HALLWAY',
             'SOUTH':'MAINLIVINGROOM',
