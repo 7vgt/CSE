@@ -15,8 +15,8 @@ world_map = {
             'NORTH':'HALLWAY'
         }
     },
-    'MASTERBATHROOM1': {
-        'NAME':'Master Bathroom 2',
+    'MASTERROOM1': {
+        'NAME':'Master Room 1',
         'DESCRIPTION':"The room is filled with pictures of you "
                       "and has posters of princesses lets hurry theres a exit West and North",
         'PATHS': {
@@ -48,7 +48,7 @@ world_map = {
             'SOUTH' : 'ATTIC',
             'NORTH': 'MOM AND DADS ROOM',
             'WEST': 'VROOM',
-            'EAST': 'MAINBATHROOM2'
+            'EAST': 'MASTERROOM1'
         }
     },
     'HALLWAY1': {
@@ -64,7 +64,7 @@ world_map = {
         'DESCRIPTION': 'There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace',
         'PATHS': {
             'EAST': 'KITCHEN',
-            'SOUTH': 'HALLWAY'
+            'SOUTH': 'Master Room 1'
         }
     },
     'KITCHEN': {
@@ -133,6 +133,14 @@ world_map = {
         }
     },
     'TREEHOUSE': {
+        'NAME': 'OUTSIDE',
+        'DESCRIPTION': 'nothing but a sand pit with a treasure chest that is empty',
+        'PATHS': {
+            'SOUTH': 'DINNINGROOM',
+            'EAST': 'TREEHOUSE'
+        },
+    }
+    '': {
         'NAME': 'OUTSIDE',
         'DESCRIPTION': 'nothing but a sand pit with a treasure chest that is empty',
         'PATHS': {
