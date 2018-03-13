@@ -41,7 +41,11 @@ cool_car = KeyLessCar(4, 9002)
 cool_car.turn_on()
 
 
+class Tesla(Car):
+    def __init__(self, seats):
+        super(Tesla, self).__init__(seats, 500)
 
-
+    def Launch(self):
+        print("You launch the car into low earth orbit")
 
 
