@@ -11,9 +11,8 @@ class Employee(Person):
         super(Employee, self).__init__(name, age)
         self.length = length
 
-
-    def eye_color(self):
-        print("You have blue eyes")
+    def name_tag(self):
+        print("Tells Us All of your information")
 
 
 class Programmer(Employee):
@@ -22,8 +21,5 @@ class Programmer(Employee):
         self.weight = weight
 
 
-    def birth(self):
-        print("Your birthday is on November 17 2002")
-
-
-Programmer
+    def experience_recemmended(self):
+        print("10 years")

@@ -20,7 +20,7 @@ MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY', None, "
 
 MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None, None,"Not much here just a couch, a firplace, and a TV, oh wait oh no don't wake up vicky shes on the couch asleep.")
 
-MOM/DAD = Room('Vickys Mom And Dads Room', None, 'HALLWAY', 'MASTERBATHROOM1', None, None, "The room is filled with a bed, nice paintings, and a fur rug ")
+MOM_DAD = Room('Vickys Mom And Dads Room', None, 'HALLWAY', 'MASTERBATHROOM1', None, None, "The room is filled with a bed, nice paintings, and a fur rug ")
 
 HALLWAY = Room('The Main Hallway', 'MASTERROOM1', 'ATTIC', 'MASTERROOM1', 'VROOM', None, "some  family pictures and 4 doors")
 
