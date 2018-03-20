@@ -45,10 +45,58 @@ class Potion(Item):
 
 
 class Armour(Item):
-    def __init__(self, name, value, durability ):
-        super(Armour, self).__init__(name, value, durability)
+    def __init__(self, name, value):
+        super(Armour, self).__init__(name, value)
         self.durability = 100
 
     def durability_damage(self):
         print("%s you have lost 2 hearts"% self.durability)
         self.durability = self.durability - 2
+
+
+class Weapon(Item):
+    def __init__(self, name, value):
+        super(Weapon, self).__init__(name, value)
+        self.durability = 100
+        self.attack = 1
+        self.enemy = 10
+
+    def deal_damage(self):
+        print("%s You have hit someone and taken 1 heat from them"% self.enemy)
+        self.enemy = self.enemy - 1
+
+
+class blocks(Item):
+    def __init__(self, name, value):
+         super(blocks, self).__init__(name, value)
+
+    def Place(self):
+        print("You have placed a block in front of you")
+
+    def Break(self):
+        print("You Have Broken a block in front of you")
+
+
+class draw(Item):
+    def __init__(self, name, value):
+        super(draw, self).__init__(name, value)
+
+    def Doodle(self):
+        print("you drew something out of this world")
+
+    def Erase(self):
+        print("The paper is now empty and has nothing on it now")
+
+class Files(Item):
+    def __init__(self, name, value):
+        super(Files, self).__init__(name, value)
+
+    def information(self):
+        print("This has lots of random facts on it")
+
+class Inventory(Item)
+    def __init__(self, name, value):
+        super(Inventory, self).__init__(name, value)
+
+    def Hold(self):
+        print("you are holding on to your items")
