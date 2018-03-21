@@ -94,9 +94,46 @@ class Files(Item):
     def information(self):
         print("This has lots of random facts on it")
 
-class Inventory(Item)
+class Inventory(Item):
     def __init__(self, name, value):
         super(Inventory, self).__init__(name, value)
 
     def Hold(self):
         print("you are holding on to your items")
+
+class Dishes(Item):
+    def __init__(self, name, value):
+        super(Dishes, self).__init__(name, value)
+
+    def Throw(self):
+        print("You shattered the Item ")
+
+class Ac_unit(Item):
+    def __init__(self, name, value):
+        super(Ac_unit, self).__init__(name, value)
+
+    def Cold(self):
+        print("The room suddenly got cold")
+
+    def Hot(self):
+        print("The room got really hot all of a sudden")
+        
+class Clock(Item):
+    def __init__(self, name, value, time):
+        super(Clock, self).__init__(name, value)
+        self.time = time
+        
+    def Clock_read(self):
+        print("You should have learn how to read time")
+        
+class clothes(Item):
+    def __init__(self, name, value, brand):
+        super(clothes, self).__init__(name, value)
+        self.brand = brand
+        
+    def wear(self):
+        print("It snuggly fits you")
+        
+class Bake(Item):
+    def __init__(self):
+        super(Bake, self).__init__()
