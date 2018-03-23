@@ -16,7 +16,7 @@ class Food(Item):
         self.health = health
 
     def eat(self):
-        print("%s You have gain 10 health"% self.health)
+        print("%s You have gain 10 health" % self.health)
         self.health = self.health + 10
 
     def chock(self):
@@ -92,8 +92,8 @@ class Character(Item):
     def __init__(self, name, value):
         super(Character, self).__init__(name, value)
 
-    def information(self):
-        print("This has lots of random facts on it")
+    def past_story(self):
+        print("They are an employed at Krispy Cream Donunts and did not make good life choices in there past.")
 
 
 class Inventory(Item):
@@ -110,7 +110,6 @@ class Dishes(Item):
 
     def throw(self):
         print("You shattered the Item ")
-
 
 class Ac(Item):
     def __init__(self, name, value):
@@ -132,9 +131,9 @@ class Clock(Item):
         print("You should have learn how to read time")
         
 
-class clothes(Item):
+class Clothes(Item):
     def __init__(self, name, value, brand):
-        super(clothes, self).__init__(name, value)
+        super(Clothes, self).__init__(name, value)
         self.brand = brand
         
     def wear(self):
@@ -146,4 +145,5 @@ class Radio(Item):
         super(Radio, self).__init__(name, value)
 
     def singing(self):
-        print("Have Mercuyyyy on my heartt....")
+        print("(Song Lyrics)Just Have Mercuyyyy on my heartt...."
+              "Can I take back And just star all over")
