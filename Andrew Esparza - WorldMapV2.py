@@ -28,36 +28,36 @@ HALLWAY1 = Room('Hallway 1', 'HALLWAY2', None, None, None, None,"Just Some famil
 
 LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN', None, None, "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
 
-KITCHEN = Room()
+KITCHEN = Room('kitchen', None, None, None, None, None, None)
 
-STREET = Room()
+STREET = Room('kitchen', None, None, None, None, None, None)
 
-PORCH = Room()
+PORCH = Room('Porch', None, None, None, None, None, None)
 
-YOUWIN = Room()
+YOUWIN = Room('You Win', None, None, None, None, None, None)
 
-GARAGE = Room()
+GARAGE = Room('Garage', None, None, None, None, None, None)
 
-SECRETROOM = Room()
+SECRETROOM = Room('Secret Room', None, None, None, None, None, None)
 
-GARDEN = Room()
+GARDEN = Room('Garden', None, None, None, None, None, None)
 
-OUTSIDE = Room()
+OUTSIDE = Room('Outside', None, None, None, None, None, None)
 
-TREEHOUSE = Room()
+TREEHOUSE = Room('Tree house', None, None, None, None, None, None)
 
-HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, )
+HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, None)
 
-DINNINGROOM = ()
+DINNINGROOM = ('Dinning Room', None, None, None, None, None, None)
 
 #initialize rooms
-vickys_room = Room("west of house", "north_house", )
+vickys_room = Room("west of house", "north_house", None, None, None, None, None)
 directions = ['north', 'south', 'west', 'east']
 short_directions = ['n','s', 'w', 'e']
 
 while True:
-    print(current_node******)
-    print(current_node******)
+    print(current_node)
+    print(current_node)
     command = input('>_').lower()
     if command == 'quit':
         quit(0)
@@ -69,5 +69,5 @@ while True:
 
     if command in directions:
         try:
-            *********
+
 
