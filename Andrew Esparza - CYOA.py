@@ -13,7 +13,7 @@ class Item(object):
 class Food(Item):
     def __init__(self, name, value, health):
         super(Food, self).__init__(name, value)
-        self.health = health
+        self.health = 10
 
     def eat(self):
         print("%s You have gain 10 health" % self.health)
@@ -28,7 +28,7 @@ class Key(Item):
     def __init__(self, name, value):
         super(Key, self).__init__(name, value)
 
-    def locked(self):
+    def lockes(self):
         print("The Door Is Locked")
 
     def open(self):
@@ -150,6 +150,10 @@ class Radio(Item):
               "Can I take back And just star all over")
 
 
+Apple = Food('Apple', '$1', 10)
+
+Cookie = Food('Cookie', '$2.50', 2)
+
 
 class Characters(object):
     def __init__(self, name, move, inventory, abilities, health, status, physique, description, take_damage,
@@ -187,6 +191,9 @@ class Characters(object):
             attack = self.health - 1
 
 
+My_Character = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
+                          '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always wearing a pink hat', None, None)
+
 class Room(object):
     def __init__(self, name, north, south, east, west, items, description):
         self.name = name
@@ -200,7 +207,6 @@ class Room(object):
     def move(self, direction):
         global current_node
         current_node = globals()[getattr(self, direction)]
-
 
 VROOM = Room('Vickys room', 'SECRETROOM', None, 'HALLWAY', None, None,
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
