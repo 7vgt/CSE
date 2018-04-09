@@ -36,8 +36,9 @@ class Key(Item):
 
 
 class Potion(Item):
-    def __init__(self, name, value):
+    def __init__(self, name, value, effect, health):
         super(Potion, self).__init__(name, value)
+        self.effect = effect
 
     def drink(self):
         print("%s You drank a potion and gained 20 health" % self.health)
@@ -89,12 +90,8 @@ class Draw(Item):
 
 
 class Character(Item):
-    def __init__(self, name, value):
+    def __init__(self, name, value, Description):
         super(Character, self).__init__(name, value)
-
-    def past_story(self):
-        print("They are an employed at Krispy Cream Donunts and did not make good life choices in there past.")
-
 
 class Inventory(Item):
     def __init__(self, name, value):
@@ -153,6 +150,37 @@ class Radio(Item):
 Apple = Food('Apple', '$1', 10)
 
 Cookie = Food('Cookie', '$2.50', 2)
+
+cheese = Food('Cheese', '$100', 20)
+
+Wishing_cake = Food('Wishing Cupcake','$10,000', 100)
+
+Stone_blocks = Blocks('Stone block','$5')
+
+Wood_blocks = Blocks('Wood', '$5')
+
+Gucci_shirt = Clothes('Guccis shirt', '$1000', 'Gucci')
+
+Calvan_Kalin = Clothes('Pants/Underwear', '$75', 'Calvin Kalin')
+
+Levi_pants = Clothes('Skinny Jeans', '$50', 'Levis')
+
+Hollister = Clothes('Jacket', '$40', 'Hollister')
+
+Addidas = Clothes('Running suit', '$30', 'Hollister')
+
+Yeezys = Clothes('Shoes', '$400', 'Addidas')
+
+Supreme = Clothes('Socks', '$40', 'Supreme')
+
+Front_Door_Key = Key('House Key', None)
+
+Garage_key = Key('Garage Key', None)
+
+Health_potion = Potion('Healing Potion', '$20')
+
+Damage_potion = Potion('Damage Potion', '$30')
+
 
 
 class Characters(object):
