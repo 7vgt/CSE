@@ -36,7 +36,7 @@ class Key(Item):
 
 
 class Potion(Item):
-    def __init__(self, name, value, effect, health):
+    def __init__(self, name, value, effect):
         super(Potion, self).__init__(name, value)
         self.effect = effect
 
@@ -46,9 +46,10 @@ class Potion(Item):
 
 
 class Armour(Item):
-    def __init__(self, name, value):
+    def __init__(self, name, value, type):
         super(Armour, self).__init__(name, value)
         self.durability = 100
+        self.type = type
 
     def durability_damage(self):
         print("%s you have lost 2 hearts" % self.durability)
@@ -101,12 +102,12 @@ class Inventory(Item):
         print("you are holding on to your items")
 
 
-class Dishes(Item):
+class Ladder(Item):
     def __init__(self, name, value):
-        super(Dishes, self).__init__(name, value)
+        super(Ladder, self).__init__(name, value)
 
-    def throw(self):
-        print("You shattered the Item ")
+    def climb(self):
+        print("You have gone up ladder ")
 
 
 class Ac(Item):
@@ -177,11 +178,37 @@ Front_Door_Key = Key('House Key', None)
 
 Garage_key = Key('Garage Key', None)
 
-Health_potion = Potion('Healing Potion', '$20')
+Health_potion = Potion('Healing Potion', '$20', 'Healing')
 
-Damage_potion = Potion('Damage Potion', '$30')
+Damage_potion = Potion('Damage Potion', '$30', 'Lost Health')
 
+Iron_Helment = Armour('Iron Helment', '$40', 'Iron')
 
+Iron_Chestplate = Armour('Iron Chestplate', '$80', 'Iron')
+
+Iron_leggings = Armour('Iron Leggings', '$60', 'Iron')
+
+Iron_Boots = Armour('Iron Boots', '$40', 'Iron')
+
+Diamond_Helment = Armour('Diamond Boots', '$1000', 'Diamond')
+
+Diamond_Chestplate = Armour('Diamond Chestplate', '$1400', 'Diamond')
+
+Diamond_Leggings = Armour('Diamond_leggings', '$1200', 'Diamond')
+
+Diamond_Boots = Armour('Diamond Boots', '$1000', 'Diamond')
+
+Wood_sword = Weapon('Wood Sword', '$20')
+
+stone_sword = Weapon('Stone Sword', '$40')
+
+Gold_sword = Weapon('Gold Sword', '$120')
+
+Iron_Sword = Weapon('Iron Sword', '$60')
+
+Diamond_sword = Weapon('Diamond Sword', '$1000')
+
+TreeHouse_Ladder = Ladder('Tree House Ladder', None)
 
 class Characters(object):
     def __init__(self, name, move, inventory, abilities, health, status, physique, description, take_damage,
@@ -254,18 +281,18 @@ MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None, None,
 MOM_DAD = Room('Vickys Mom And Dads Room', None, 'HALLWAY', 'MASTERBATHROOM1', None, None,
                "The room is filled with a bed, nice paintings, and a fur rug ")
 
-HALLWAY = Room('The Main Hallway', 'MASTERROOM1', 'ATTIC', 'MASTERROOM1', 'VROOM', None,
+HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', None,
                "Some  family pictures and 4 doors")
 
-HALLWAY1 = Room('Hallway 1', 'HALLWAY', None, None, None, None,"Just Some family Pictures and random pictures.")
+HALLWAY1 = Room('Hallway 1', 'HALLWAY2', 'KITCHEN', None, None, None,"Just Some family Pictures and random pictures.")
 
 LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN', None, None, "There is a couch with 4 tables a \n"
                                                                             "smaller 1 seat recliner, and a fireplace")
 
-KITCHEN = Room('kitchen', 'HALLWAY', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', None, 'The Room Is Filled \n'
+KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', None, 'The Room Is Filled \n'
                                                                                      'with a lovly smell')
 
-STREET = Room('Street', None, None, 'PORCH', 'YOUWIN', None, 'Room looks like your home And has a smell \n'
+STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', None, 'Room looks like your home And has a smell \n'
                                                              'of sweet sweet victory')
 
 PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, None, 'You have Done it your outside and theres \n'
@@ -273,15 +300,15 @@ PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, None, 'You have Do
 
 YOUWIN = Room('You Win', None, None, None, 'STREET', 'Trophi', 'Congradulations you one the game')
 
-GARAGE = Room('Garage', None, None, None, 'KITCHEN', 'Key', 'Filled with dust and cobwebs with a shelf, \n'
+GARAGE = Room('Garage', None, None, None, 'KITCHEN', Key, 'Filled with dust and cobwebs with a shelf, \n'
                                                             'cobwebs, ladder, and it looks like a key on the shelf')
 
 SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, 'A Wish', 'The room is completly blue')
 
-GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, 'Carrots', 'It is filled with no life with a box \n'
+GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, Apple, 'It is filled with no life with a box \n'
                                                                   'saying beny on it with a hole next to it')
 
-OUTSIDE = Room('Outside', None, 'LIVINGROOM', 'TREEHOUSE', None, 'Blocks, pickaxe', 'Looks kinda dead, but it has\n'
+OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, 'Blocks, pickaxe', 'Looks kinda dead, but it has\n'
                                                                                     ' a small playground')
 
 TREEHOUSE = Room('Tree house', None, None, None, None, None, None)
