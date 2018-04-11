@@ -9,6 +9,9 @@ class Item(object):
     def drop(self):
         print("you dropped your item")
 
+    def PickUp(self):
+        print('You picked up the Item' )
+
 
 class Food(Item):
     def __init__(self, name, value, health):
@@ -107,7 +110,7 @@ class Ladder(Item):
         super(Ladder, self).__init__(name, value)
 
     def climb(self):
-        print("You have gone up ladder ")
+        print("You have gone up the ladder ")
 
 
 class Ac(Item):
@@ -154,25 +157,27 @@ Cookie = Food('Cookie', '$2.50', 2)
 
 cheese = Food('Cheese', '$100', 20)
 
-Wishing_cake = Food('Wishing Cupcake','$10,000', 100)
+Wishing_cake = Food('Wishing Cupcake', '$10,000', 100)
 
-Stone_blocks = Blocks('Stone block','$5')
+Candy = Food('Candy', '$1', 2)
+
+Stone_blocks = Blocks('Stone block', '$5')
 
 Wood_blocks = Blocks('Wood', '$5')
 
 Gucci_shirt = Clothes('Guccis shirt', '$1000', 'Gucci')
 
-Calvan_Kalin = Clothes('Pants/Underwear', '$75', 'Calvin Kalin')
+Calvan_Kalin_Underwear = Clothes('Underwear', '$75', 'Calvin Kalin')
 
 Levi_pants = Clothes('Skinny Jeans', '$50', 'Levis')
 
-Hollister = Clothes('Jacket', '$40', 'Hollister')
+Hollister_Jacket = Clothes('Jacket', '$40', 'Hollister')
 
-Addidas = Clothes('Running suit', '$30', 'Hollister')
+Addidas_Shoes = Clothes('Running suit', '$30', 'Hollister')
 
-Yeezys = Clothes('Shoes', '$400', 'Addidas')
+Yeezys_Shoes = Clothes('Shoes', '$400', 'Addidas')
 
-Supreme = Clothes('Socks', '$40', 'Supreme')
+Supreme_socks = Clothes('Socks', '$40', 'Supreme')
 
 Front_Door_Key = Key('House Key', None)
 
@@ -210,6 +215,7 @@ Diamond_sword = Weapon('Diamond Sword', '$1000')
 
 TreeHouse_Ladder = Ladder('Tree House Ladder', None)
 
+
 class Characters(object):
     def __init__(self, name, move, inventory, abilities, health, status, physique, description, take_damage,
                  eat):
@@ -246,8 +252,11 @@ class Characters(object):
             attack = self.health - 1
 
 
-My_Character = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
+You = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
                           '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always wearing a pink hat', None, None)
+
+Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange \n'
+                    'hair with a burning look of anger that will frighten anyone', None, None)
 
 class Room(object):
     def __init__(self, name, north, south, east, west, items, description):
@@ -263,22 +272,23 @@ class Room(object):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
-VROOM = Room('Vickys room', 'SECRETROOM', None, 'HALLWAY', None, None,
+VROOM = Room('Vickys room', 'SECRETROOM', None, 'HALLWAY', None, Key,
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
              "there is a strange small opening in the wall north and a open door East w")
 
-ATTIC = Room('The Attic', 'HALLWAY', None, None, None, None,
+ATTIC = Room('The Attic', 'HALLWAY', None, None, None, Ladder,
              "theres not much here just dust, webs, and a stair case that you came from that goes north")
 
-MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY', None,
+MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY\n'
+                   , [Calvan_Kalin_Underwear, Supreme_socks, Yeezys_Shoes, Gucci_shirt],
                    "The room is filled with pictures of you and has posters of princesses lets hurry theres a exit \n"
                    "West and North")
 
-MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None, None,
+MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None, Yeezys_Shoes,
                       "Not much here just a couch, a firplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
                       "the couch asleep.")
 
-MOM_DAD = Room('Vickys Mom And Dads Room', None, 'HALLWAY', 'MASTERBATHROOM1', None, None,
+MOM_DAD = Room('Vickys Mom And Dads Room', None, 'HALLWAY', 'MASTERBATHROOM1', None, Candy,
                "The room is filled with a bed, nice paintings, and a fur rug ")
 
 HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', None,
@@ -286,10 +296,11 @@ HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', N
 
 HALLWAY1 = Room('Hallway 1', 'HALLWAY2', 'KITCHEN', None, None, None,"Just Some family Pictures and random pictures.")
 
-LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN', None, None, "There is a couch with 4 tables a \n"
-                                                                            "smaller 1 seat recliner, and a fireplace")
+LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN\n'
+                 , None, [Yeezys_Shoes, Addidas_Shoes,Supreme_socks, Gucci_shirt], "\n"
+                  "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
 
-KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', None, 'The Room Is Filled \n'
+KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', [Cookie, Apple], 'The Room Is Filled \n'
                                                                                      'with a lovly smell')
 
 STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', None, 'Room looks like your home And has a smell \n'
@@ -300,7 +311,7 @@ PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, None, 'You have Do
 
 YOUWIN = Room('You Win', None, None, None, 'STREET', 'Trophi', 'Congradulations you one the game')
 
-GARAGE = Room('Garage', None, None, None, 'KITCHEN', Key, 'Filled with dust and cobwebs with a shelf, \n'
+GARAGE = Room('Garage', None, None, None, 'KITCHEN', [Key, Ladder], 'Filled with dust and cobwebs with a shelf, \n'
                                                             'cobwebs, ladder, and it looks like a key on the shelf')
 
 SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, 'A Wish', 'The room is completly blue')
@@ -311,14 +322,13 @@ GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, Apple, 'It is filled with
 OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, 'Blocks, pickaxe', 'Looks kinda dead, but it has\n'
                                                                                     ' a small playground')
 
-TREEHOUSE = Room('Tree house', None, None, None, None, None, None)
+TREEHOUSE = Room('Tree house', None, None, None, None, Key, None)
 
 HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, None)
 
-DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', None, 'WIth a long table with some fruit,\n'
+DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', Apple, 'WIth a long table with some fruit,\n'
                                                                           ' 20 chairs and some toys on the ground')
 
-#initialize rooms
 vickys_roo = Room("west of house", "north_house", None, None, None, None, None)
 current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
