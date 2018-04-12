@@ -71,6 +71,12 @@ class Weapon(Item):
         self.enemy = self.enemy - 1
 
 
+class Tool(Weapon):
+    def __init__(self, name, value):
+        super(Tool, self).__init__(name, value,)
+
+
+
 class Blocks(Item):
     def __init__(self, name, value):
         super(Blocks, self).__init__(name, value)
@@ -161,6 +167,8 @@ Wishing_cake = Food('Wishing Cupcake', '$10,000', 100)
 
 Candy = Food('Candy', '$1', 2)
 
+Carrot = Food('Carrot', '$4', 5)
+
 Stone_blocks = Blocks('Stone block', '$5')
 
 Wood_blocks = Blocks('Wood', '$5')
@@ -197,21 +205,27 @@ Iron_Boots = Armour('Iron Boots', '$40', 'Iron')
 
 Diamond_Helment = Armour('Diamond Boots', '$1000', 'Diamond')
 
-Diamond_Chestplate = Armour('Diamond Chestplate', '$1400', 'Diamond')
+Diamond_Chestplate = Armour('Tier III ChestPlate', '$1400', 'Diamond')
 
-Diamond_Leggings = Armour('Diamond_leggings', '$1200', 'Diamond')
+Diamond_Leggings = Armour('Tier III leggings', '$1200', 'Diamond')
 
-Diamond_Boots = Armour('Diamond Boots', '$1000', 'Diamond')
+Diamond_Boots = Armour('Tier III Boots', '$1000', 'Diamond')
 
-Wood_sword = Weapon('Wood Sword', '$20')
+Wood_sword = Weapon('Tier III Sword', '$20')
 
 stone_sword = Weapon('Stone Sword', '$40')
 
 Gold_sword = Weapon('Gold Sword', '$120')
 
-Iron_Sword = Weapon('Iron Sword', '$60')
+Steel_Sword = Weapon('Steel Sword', '$60')
 
-Diamond_sword = Weapon('Diamond Sword', '$1000')
+Diamond_sword = Weapon('Excalibur', '$1000')
+
+Pick_Axe = Tool('Pick Axe','$250')
+
+Legendary_Axe_Of_Amazing_Fantasticnes = Tool('Axe', '$500')
+
+Code_Breaker = Tool('Axe', '$1000000')
 
 TreeHouse_Ladder = Ladder('Tree House Ladder', None)
 
@@ -314,22 +328,24 @@ YOUWIN = Room('You Win', None, None, None, 'STREET', 'Trophi', 'Congradulations 
 GARAGE = Room('Garage', None, None, None, 'KITCHEN', [Key, Ladder], 'Filled with dust and cobwebs with a shelf, \n'
                                                             'cobwebs, ladder, and it looks like a key on the shelf')
 
-SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, 'A Wish', 'The room is completly blue')
+SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, Wishing_cake, 'The room is completly blue')
 
-GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, Apple, 'It is filled with no life with a box \n'
+GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, [Apple, Carrot], 'It is filled with no life with a box \n'
                                                                   'saying beny on it with a hole next to it')
 
-OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, 'Blocks, pickaxe', 'Looks kinda dead, but it has\n'
+OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, Pick_Axe, 'Looks kinda dead, but it has\n'
                                                                                     ' a small playground')
 
-TREEHOUSE = Room('Tree house', None, None, None, None, Key, None)
+TREEHOUSE = Room('Tree house', None, None, None, None,
+                 [Key, Diamond_Chestplate, Diamond_Leggings, Diamond_Helment, Diamond_Boots, Diamond_sword],
+                 None)
 
 HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, None)
 
-DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', Apple, 'WIth a long table with some fruit,\n'
-                                                                          ' 20 chairs and some toys on the ground')
+DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing_Fantasticnes],
+               'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
 
-vickys_roo = Room("west of house", "north_house", None, None, None, None, None)
+vickys_room = Room("west of house", "north_house", None, None, None, None, None)
 current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
 short_directions = ['n','s', 'w', 'e']
@@ -352,5 +368,3 @@ while True:
     else:
         print('Command not Recognized')
     print()
-
-
