@@ -159,6 +159,7 @@ class Radio(Item):
 
 Apple = Food('Apple', '$1', 10)
 
+Pizza = Food('Pizza', '$13.95', 25)
 Cookie = Food('Cookie', '$2.50', 2)
 
 cheese = Food('Cheese', '$100', 20)
@@ -286,11 +287,11 @@ class Room(object):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
-VROOM = Room('Vickys room', 'SECRETROOM', None, 'HALLWAY', None, Key,
+VROOM = Room('Vickys room', 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
              "there is a strange small opening in the wall north and a open door East w")
 
-ATTIC = Room('The Attic', 'HALLWAY', None, None, None, Ladder,
+ATTIC = Room('The Attic', 'HALLWAY', None, None, None, [Ladder, Iron_Chestplate, Iron_Boots],
              "theres not much here just dust, webs, and a stair case that you came from that goes north")
 
 MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY\n'
@@ -298,7 +299,8 @@ MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY\n'
                    "The room is filled with pictures of you and has posters of princesses lets hurry theres a exit \n"
                    "West and North")
 
-MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None, Yeezys_Shoes,
+MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None,
+                      [Yeezys_Shoes, Hollister_Jacket, Supreme_socks],
                       "Not much here just a couch, a firplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
                       "the couch asleep.")
 
@@ -338,9 +340,9 @@ OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, Pick_Axe, 'Loo
 
 TREEHOUSE = Room('Tree house', None, None, None, None,
                  [Key, Diamond_Chestplate, Diamond_Leggings, Diamond_Helment, Diamond_Boots, Diamond_sword],
-                 None)
+                 "A Room That seems to be small, but looks can be decieving and its filled with amazing Items.")
 
-HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, None)
+HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, "A big wide Hallway That is filled with Pictures ")
 
 DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing_Fantasticnes],
                'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
