@@ -160,6 +160,7 @@ class Radio(Item):
 Apple = Food('Apple', '$1', 10)
 
 Pizza = Food('Pizza', '$13.95', 25)
+
 Cookie = Food('Cookie', '$2.50', 2)
 
 cheese = Food('Cheese', '$100', 20)
@@ -169,6 +170,22 @@ Wishing_cake = Food('Wishing Cupcake', '$10,000', 100)
 Candy = Food('Candy', '$1', 2)
 
 Carrot = Food('Carrot', '$4', 5)
+
+Pink_milk_shake = Food('Pink milk shake', '$5', 15)
+
+Fries = Food('French Fries', '$2.50', 10)
+
+Big_Mac = Food('Big Mac', '$5', 20)
+
+BaJa_Blast = Food('BAJA Blast', '$5', 15)
+
+Nacho_Fries = Food('Nacho Fries', '$1', 5)
+
+Poutine = Food('Beef Poutine', '$10', 25)
+
+Mc_Chicken = Food('McChicken', '$1.50', 10)
+
+Pop_Corn = Food('PopCorn', '$1', 5)
 
 Stone_blocks = Blocks('Stone block', '$5')
 
@@ -287,7 +304,8 @@ class Room(object):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
-VROOM = Room('Vickys room', 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
+
+START = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
              "there is a strange small opening in the wall north and a open door East w")
 
@@ -347,10 +365,9 @@ HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, "A big wide 
 DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing_Fantasticnes],
                'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
 
-vickys_room = Room("west of house", "north_house", None, None, None, None, None)
-current_node = VROOM
+current_node = START
 directions = ['north', 'south', 'west', 'east']
-short_directions = ['n','s', 'w', 'e']
+short_directions = ['n', 's', 'w', 'e']
 
 while True:
     print(current_node)
