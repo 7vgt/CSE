@@ -247,6 +247,8 @@ Code_Breaker = Tool('Axe', '$1000000')
 
 TreeHouse_Ladder = Ladder('Tree House Ladder', None)
 
+Trophi_end = Item('Trophi', 'Price less')
+
 
 class Characters(object):
     def __init__(self, name, move, inventory, abilities, health, status, physique, description, take_damage,
@@ -305,12 +307,12 @@ class Room(object):
         current_node = globals()[getattr(self, direction)]
 
 
-START = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
+VROOM = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
              "there is a strange small opening in the wall north and a open door East w")
 
 ATTIC = Room('The Attic', 'HALLWAY', None, None, None, [Ladder, Iron_Chestplate, Iron_Boots],
-             "theres not much here just dust, webs, and a stair case that you came from that goes north")
+             "there is not much here just dust, webs, and a stair case that you came from that goes north")
 
 MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY\n'
                    , [Calvan_Kalin_Underwear, Supreme_socks, Yeezys_Shoes, Gucci_shirt],
@@ -319,10 +321,10 @@ MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY\n'
 
 MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None,
                       [Yeezys_Shoes, Hollister_Jacket, Supreme_socks],
-                      "Not much here just a couch, a firplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
+                      "Not much here just a couch, a fireplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
                       "the couch asleep.")
 
-MOM_DAD = Room('Vickys Mom And Dads Room', None, 'HALLWAY', 'MASTERBATHROOM1', None, Candy,
+MOM_DAD = Room("Vicky's Mom And Dads Room", None, 'HALLWAY', 'MASTERBATHROOM1', None, Candy,
                "The room is filled with a bed, nice paintings, and a fur rug ")
 
 HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', None,
@@ -343,7 +345,7 @@ STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', None, 'Room looks like yo
 PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, None, 'You have Done it your outside and theres \n'
                                                                     'one other path other than where you came from')
 
-YOUWIN = Room('You Win', None, None, None, 'STREET', 'Trophi', 'Congradulations you one the game')
+YOUWIN = Room('You Win', None, None, None, 'STREET', Trophi_end, 'Congradulations you one the game')
 
 GARAGE = Room('Garage', None, None, None, 'KITCHEN', [Key, Ladder], 'Filled with dust and cobwebs with a shelf, \n'
                                                             'cobwebs, ladder, and it looks like a key on the shelf')
@@ -365,15 +367,17 @@ HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, "A big wide 
 DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing_Fantasticnes],
                'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
 
-current_node = START
+current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
 while True:
     print(current_node)
-    print(current_node)
     command = input('>_').lower()
     if command == 'quit':
+        quit(0)
+    if command == 'die':
+        print("Your Died")
         quit(0)
     elif command in short_directions:
         pos = short_directions.index(command)
@@ -386,4 +390,3 @@ while True:
             print("You cannot go this way.")
     else:
         print('Command not Recognized')
-    print()
