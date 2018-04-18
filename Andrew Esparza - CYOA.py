@@ -145,7 +145,7 @@ class Clothes(Item):
         self.brand = brand
 
     def wear(self):
-        print("It snuggly fits you")
+        print("It snugly fits you")
 
 
 class Radio(Item):
@@ -286,7 +286,7 @@ class Characters(object):
             attack = self.health - 1
 
 
-You = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
+Timmy = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
                           '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always wearing a pink hat', None, None)
 
 Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange \n'
@@ -332,7 +332,7 @@ HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', N
 
 HALLWAY1 = Room('Hallway 1', 'HALLWAY2', 'KITCHEN', None, None, None,"Just Some family Pictures and random pictures.")
 
-LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN\n'
+LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN'
                  , None, [Yeezys_Shoes, Addidas_Shoes,Supreme_socks, Gucci_shirt], "\n"
                   "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
 
@@ -372,7 +372,7 @@ directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
 while True:
-    print(current_node)
+    print(current_node.name)
     command = input('>_').lower()
     if command == 'quit':
         quit(0)
@@ -390,3 +390,14 @@ while True:
             print("You cannot go this way.")
     else:
         print('Command not Recognized')
+
+    if current_node.name == 'You Win':
+        print("You Win")
+        quit(0)
+
+    if current_node == PORCH:
+        if command in ("south", "s"):
+            if Key in Timmy.inventory:
+                print("You opened the door you may now pass")
+    else:
+        print("You can not pass")
