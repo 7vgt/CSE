@@ -239,9 +239,9 @@ Steel_Sword = Weapon('Steel Sword', '$60')
 
 Diamond_sword = Weapon('Excalibur', '$1000')
 
-Pick_Axe = Tool('Pick Axe','$250')
+Pick_Axe = Tool('Pick Axe', '$250')
 
-Legendary_Axe_Of_Amazing_Fantasticnes = Tool('Axe', '$500')
+Legendary_Axe_Of_Amazing = Tool('Axe', '$500')
 
 Code_Breaker = Tool('Axe', '$1000000')
 
@@ -251,7 +251,7 @@ Trophi_end = Item('Trophi', 'Price less')
 
 
 class Characters(object):
-    def __init__(self, name, move, inventory, abilities, health, status, physique, description, take_damage,
+    def __init__(self, name, move, inventory, abilities, health, status, physique, description,
                  eat):
         self.name = name
         self.move = move
@@ -271,13 +271,11 @@ class Characters(object):
         else:
             print("No response")
 
-
     def interaction(self):
         if self.interaction:
             self.interaction = True
             print("You: how are you")
             print("Random: Oh... good... bye")
-
 
     def attack_punch(self):
         if self.attack_punch:
@@ -287,10 +285,11 @@ class Characters(object):
 
 
 Timmy = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
-                          '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always wearing a pink hat', None, None)
+                   '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always wearing a pink hat', None)
 
-Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange \n'
-                    'hair with a burning look of anger that will frighten anyone', None, None)
+Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange'
+                   'hair with a burning look of anger that will frighten anyone', None)
+
 
 class Room(object):
     def __init__(self, name, north, south, east, west, items, description):
@@ -314,12 +313,12 @@ VROOM = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
 ATTIC = Room('The Attic', 'HALLWAY', None, None, None, [Ladder, Iron_Chestplate, Iron_Boots],
              "there is not much here just dust, webs, and a stair case that you came from that goes north")
 
-MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY\n'
-                   , [Calvan_Kalin_Underwear, Supreme_socks, Yeezys_Shoes, Gucci_shirt],
+MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY',
+                   [Calvan_Kalin_Underwear, Supreme_socks, Yeezys_Shoes, Gucci_shirt],
                    "The room is filled with pictures of you and has posters of princesses lets hurry theres a exit \n"
                    "West and North")
 
-MAINLIVINGROOM = Room('Main Living Room','KITCHEN', 'PORCH', None, None,
+MAINLIVINGROOM = Room('Main Living Room', 'KITCHEN', 'PORCH', None, None,
                       [Yeezys_Shoes, Hollister_Jacket, Supreme_socks],
                       "Not much here just a couch, a fireplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
                       "the couch asleep.")
@@ -330,14 +329,14 @@ MOM_DAD = Room("Vicky's Mom And Dads Room", None, 'HALLWAY', 'MASTERBATHROOM1', 
 HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', None,
                "Some  family pictures and 4 doors")
 
-HALLWAY1 = Room('Hallway 1', 'HALLWAY2', 'KITCHEN', None, None, None,"Just Some family Pictures and random pictures.")
+HALLWAY1 = Room('Hallway 1', 'HALLWAY2', 'KITCHEN', None, None, None, "Just Some family Pictures and random pictures.")
 
-LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN'
-                 , None, [Yeezys_Shoes, Addidas_Shoes,Supreme_socks, Gucci_shirt], "\n"
+LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN',
+                  None, [Yeezys_Shoes, Addidas_Shoes, Supreme_socks, Gucci_shirt], "\n"
                   "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
 
-KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', [Cookie, Apple], 'The Room Is Filled \n'
-                                                                                     'with a lovly smell')
+KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', [Cookie, Apple], 'The Room Is Filled '
+                                                                                                 'with a lovely smell')
 
 STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', None, 'Room looks like your home And has a smell \n'
                                                              'of sweet sweet victory')
@@ -345,18 +344,18 @@ STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', None, 'Room looks like yo
 PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, None, 'You have Done it your outside and theres \n'
                                                                     'one other path other than where you came from')
 
-YOUWIN = Room('You Win', None, None, None, 'STREET', Trophi_end, 'Congradulations you one the game')
+YOUWIN = Room('You Win', None, None, None, 'STREET', Trophi_end, 'Congratulations you one the game')
 
-GARAGE = Room('Garage', None, None, None, 'KITCHEN', [Key, Ladder], 'Filled with dust and cobwebs with a shelf, \n'
-                                                            'cobwebs, ladder, and it looks like a key on the shelf')
+GARAGE = Room('Garage', None, None, None, 'KITCHEN', [Key, Ladder], 'Filled with dust and cobwebs with a shelf,'
+                                                                    ' ladder, and it looks like a key on the shelf')
 
-SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, Wishing_cake, 'The room is completly blue')
+SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, Wishing_cake, 'The room is completely blue')
 
-GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, [Apple, Carrot], 'It is filled with no life with a box \n'
-                                                                  'saying beny on it with a hole next to it')
+GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, [Apple, Carrot], 'It is filled with no life with a box '
+                                                                        'saying Bucky on it with a hole next to it')
 
-OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, Pick_Axe, 'Looks kinda dead, but it has\n'
-                                                                                    ' a small playground')
+OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, Pick_Axe, 'Looks kinda dead, but it has'
+                                                                            ' a small playground')
 
 TREEHOUSE = Room('Tree house', None, None, None, None,
                  [Key, Diamond_Chestplate, Diamond_Leggings, Diamond_Helment, Diamond_Boots, Diamond_sword],
@@ -364,7 +363,7 @@ TREEHOUSE = Room('Tree house', None, None, None, None,
 
 HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, "A big wide Hallway That is filled with Pictures ")
 
-DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing_Fantasticnes],
+DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing],
                'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
 
 current_node = VROOM
@@ -399,5 +398,5 @@ while True:
         if command in ("south", "s"):
             if Key in Timmy.inventory:
                 print("You opened the door you may now pass")
-    else:
-        print("You can not pass")
+            else:
+                print("You can not pass")
