@@ -305,15 +305,15 @@ class Room(object):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
-
-VROOM = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, [Key, Pizza],
+# North South East West
+VROOM = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, ["Key", "Pizza"],
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
              "there is a strange small opening in the wall north and a open door East w")
 
 ATTIC = Room('The Attic', 'HALLWAY', None, None, None, [Ladder, Iron_Chestplate, Iron_Boots],
              "there is not much here just dust, webs, and a stair case that you came from that goes north")
 
-MASTERROOM1 = Room('Master Room 1', 'LIVINGROOM', None, None, 'HALLWAY',
+MASTERROOM1 = Room('Master Room 1', 'DINNINGROOM', None, None, 'HALLWAY',
                    [Calvan_Kalin_Underwear, Supreme_socks, Yeezys_Shoes, Gucci_shirt],
                    "The room is filled with pictures of you and has posters of princesses lets hurry theres a exit \n"
                    "West and North")
@@ -323,20 +323,20 @@ MAINLIVINGROOM = Room('Main Living Room', 'KITCHEN', 'PORCH', None, None,
                       "Not much here just a couch, a fireplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
                       "the couch asleep.")
 
-MOM_DAD = Room("Vicky's Mom And Dads Room", None, 'HALLWAY', 'MASTERBATHROOM1', None, Candy,
+MOM_DAD = Room("Vicky's Mom And Dads Room", None, 'HALLWAY', None, None, Candy,
                "The room is filled with a bed, nice paintings, and a fur rug ")
 
 HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM', None,
                "Some  family pictures and 4 doors")
 
-HALLWAY1 = Room('Hallway 1', 'HALLWAY2', 'KITCHEN', None, None, None, "Just Some family Pictures and random pictures.")
+HALLWAY1 = Room('Hallway 1', 'PLAYROOM', 'KITCHEN', None, None, None, "Just Some family Pictures and random pictures.")
 
 LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN',
                   None, [Yeezys_Shoes, Addidas_Shoes, Supreme_socks, Gucci_shirt], "\n"
                   "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
 
-KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'LIVINGROOM', [Cookie, Apple], 'The Room Is Filled '
-                                                                                                 'with a lovely smell')
+KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'DINNINGROOM', [Cookie, Apple], 'The Room Is Filled '
+                                                                                                  'with a lovely smell')
 
 STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', None, 'Room looks like your home And has a smell \n'
                                                              'of sweet sweet victory')
@@ -354,7 +354,7 @@ SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, Wishing_cake, 'The r
 GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, [Apple, Carrot], 'It is filled with no life with a box '
                                                                         'saying Bucky on it with a hole next to it')
 
-OUTSIDE = Room('Outside', None, 'DINNINGROOM', 'TREEHOUSE', None, Pick_Axe, 'Looks kinda dead, but it has'
+OUTSIDE = Room('Outside', None, 'LIVINGROOM', 'TREEHOUSE', None, Pick_Axe, 'Looks kinda dead, but it has'
                                                                             ' a small playground')
 
 TREEHOUSE = Room('Tree house', None, None, None, None,
@@ -366,12 +366,19 @@ HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', None, "A big wide 
 DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', [Apple, Legendary_Axe_Of_Amazing],
                'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
 
+PLAYROOM = ('Play Room', None, None, None, None, [Wood_sword, Apple, Yeezys_Shoes, Gucci_shirt],
+            'Filled with a ball pit, wood sword, An apple, some shoes, and a shirt')
+
 current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
 while True:
     print(current_node.name)
+    print()
+    print(current_node.description)
+    print()
+    print("\n".join(current_node.items))
     command = input('>_').lower()
     if command == 'quit':
         quit(0)
@@ -395,8 +402,8 @@ while True:
         quit(0)
 
     if current_node == PORCH:
-        if command in ("south", "s"):
-            if Key in Timmy.inventory:
+        if command in ["south", "s"]:
+            if "key" in Timmy.inventory:
                 print("You opened the door you may now pass")
             else:
                 print("You can not pass")
