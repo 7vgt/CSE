@@ -305,12 +305,12 @@ class Room(object):
         global current_node
         current_node = globals()[getattr(self, direction)]
 
-# North South East West
+
 VROOM = Room("Vicky's room", 'SECRETROOM', None, 'HALLWAY', None, ["Key", "Pizza"],
              "you are in a room with a bookshelf with scuff marks on the ground, a painting, and a book on the shelf,\n"
              "there is a strange small opening in the wall north and a open door East w")
 
-ATTIC = Room('The Attic', 'HALLWAY', None, None, None, ["Tree House Ladder", "Iron Chestplate" , "Iron Boots"],
+ATTIC = Room('The Attic', 'HALLWAY', None, None, None, ["Tree House Ladder", "Iron Chestplate", "Iron Boots"],
              "there is not much here just dust, webs, and a stair case that you came from that goes north")
 
 MASTERROOM1 = Room('Master Room 1', 'DINNINGROOM', None, None, 'HALLWAY',
@@ -327,7 +327,7 @@ MOM_DAD = Room("Vicky's Mom And Dads Room", None, 'HALLWAY', None, None, ["Candy
                "The room is filled with a bed, nice paintings, and a fur rug ")
 
 HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM',
-               ["Apple", "Big Mac"],"Some  family pictures and 4 doors")
+               ["Apple", "Big Mac"], "Some  family pictures and 4 doors")
 
 HALLWAY1 = Room('Hallway 1', 'PLAYROOM', 'KITCHEN', None, None, ["Apple", "McChicken"],
                 "Just Some family Pictures and random pictures.")
@@ -346,25 +346,27 @@ STREET = Room('Street', None, None, 'YOUWIN', 'PORCH', ["Wishing Cake", "Wishing
 PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, ["Apple", "Apple"],
              'You have Done it your outside and theres one other path other than where you came from')
 
-YOUWIN = Room('You Win', None, None, None, 'STREET', ["Trophy", "Tier III Boots"], 'Congratulations you one the game')
+TheEnd = Room('End', None, None, None, 'STREET', ["Trophy", "Tier III Boots"], 'Congratulations you one the game')
 
 GARAGE = Room('Garage', None, None, None, 'KITCHEN', ["Key", "Tree House Ladder"],
               'Filled with dust and cobwebs with a shelf,'
-              ' ladder, and it looks like a key on the shelf')
+              'ladder, and it looks like a key on the shelf')
 
-SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, ["Wishing Cake", "Excalibur"], 'The room is completely blue')
+SECRETROOM = Room('Secret Room', None, 'VROOM', None, None, ["Wishing Cake", "Excalibur"],
+                  'The room is completely blue')
 
 GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, ["Apple", "Carrot"], 'It is filled with no life with a box '
-                                                                        'saying Bucky on it with a hole next to it')
+              'saying Bucky on it with a hole next to it')
 
 OUTSIDE = Room('Outside', None, 'LIVINGROOM', 'TREEHOUSE', None, ["Pick Axe", "Shoes"], 'Looks kinda dead, but it has'
                ' a small playground')
 
 TREEHOUSE = Room('Tree house', None, None, None, None,
                  ["Key", "Tier III Chestplate", "Tier III Leggings", "Tier III Helment", "Tier III Boots", "Excalibur"],
-                 "A Room That seems to be small, but looks can be decieving and its filled with amazing Items.")
+                 "A Room That seems to be small, but looks can be deceiving and its filled with amazing Items.")
 
-HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', ["Apple", "French Fries"], "A big wide Hallway That is filled with Pictures ")
+HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', ["Apple", "French Fries"],
+                "A big wide Hallway That is filled with Pictures ")
 
 DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', ["Apple", "Big Mac"],
                'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
@@ -400,7 +402,7 @@ while True:
     else:
         print('Command not Recognized')
 
-    if current_node.name == 'Win':
+    if current_node.name == 'End':
         print("You Win")
         quit(0)
 
