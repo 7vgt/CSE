@@ -17,8 +17,8 @@
       <file leaf-file-name="Andrew Esparza - CYOA.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Andrew Esparza - CYOA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="404" column="24" lean-forward="false" selection-start-line="404" selection-start-column="24" selection-end-line="404" selection-end-column="24" />
+            <state relative-caret-position="319">
+              <caret line="414" column="0" lean-forward="true" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,6 +72,7 @@
         <option value="$PROJECT_DIR$/WorldMapV2.py" />
         <option value="$PROJECT_DIR$/Andrew Esparza - Inheritance.py" />
         <option value="$PROJECT_DIR$/Andrew Esparza - WorldMapV2.py" />
+        <option value="$PROJECT_DIR$/Testing File For cyoa.py" />
         <option value="$PROJECT_DIR$/Andrew Esparza - CYOA.py" />
       </list>
     </option>
@@ -167,23 +168,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Function Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CSE" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Function Notes.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="Inheritance Notes" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -218,21 +202,38 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="Testing File For cyoa" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CSE" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Testing File For cyoa.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Notes" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Function Notes" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Andrew Esparza Characters" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Andrew Esparza - CYOA" />
-      <item index="5" class="java.lang.String" itemvalue="Python.Andrew Esparza - WorldMapV2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Andrew Esparza Characters" />
+      <item index="2" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Andrew Esparza - CYOA" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Andrew Esparza - WorldMapV2" />
+      <item index="5" class="java.lang.String" itemvalue="Python.Testing File For cyoa" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.Andrew Esparza - CYOA" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Andrew Esparza - WorldMapV2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Andrew Esparza Characters" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Function Notes" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Testing File For cyoa" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Andrew Esparza - WorldMapV2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Inheritance Notes" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Andrew Esparza Characters" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +261,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22844176" sideWeight="0.4942717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -307,18 +307,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Andrew Esparza-Lucky 7s.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Guessing Game.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -657,10 +650,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Testing File For cyoa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="414" column="0" lean-forward="true" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Andrew Esparza - CYOA.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="404" column="24" lean-forward="false" selection-start-line="404" selection-start-column="24" selection-end-line="404" selection-end-column="24" />
+        <state relative-caret-position="319">
+          <caret line="414" column="0" lean-forward="true" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
           <folding />
         </state>
       </provider>
