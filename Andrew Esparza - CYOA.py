@@ -213,7 +213,7 @@ Health_potion = Potion('Healing Potion', '$20', 'Healing')
 
 Damage_potion = Potion('Damage Potion', '$30', 'Lost Health')
 
-Iron_Helment = Armour('Iron Helment', '$40', 'Iron')
+Iron_Helmet = Armour('Iron Helmet', '$40', 'Iron')
 
 Iron_Chestplate = Armour('Iron Chestplate', '$80', 'Iron')
 
@@ -221,7 +221,7 @@ Iron_leggings = Armour('Iron Leggings', '$60', 'Iron')
 
 Iron_Boots = Armour('Iron Boots', '$40', 'Iron')
 
-Diamond_Helment = Armour('Diamond Boots', '$1000', 'Diamond')
+Diamond_Helmet = Armour('Diamond Boots', '$1000', 'Diamond')
 
 Diamond_Chestplate = Armour('Tier III ChestPlate', '$1400', 'Diamond')
 
@@ -284,8 +284,9 @@ class Characters(object):
             attack = self.health - 1
 
 
-Timmy = Characters('Timmy', None, 'Sword, Blocks, Healing Potion', 'Speed, Jump Boost, weakness', 100, 'Normal',
-                   '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always wearing a pink hat', None)
+Timmy = Characters('Timmy', None, [Iron_Boots, Iron_Chestplate, Iron_leggings], 'Speed, Jump Boost, weakness',
+                   100, 'Normal', '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always'
+                   'wearing a pink hat', None)
 
 Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange'
                    'hair with a burning look of anger that will frighten anyone', None)
@@ -332,7 +333,7 @@ HALLWAY = Room('The Main Hallway', 'MOM_DAD', 'ATTIC', 'MASTERROOM1', 'VROOM',
 HALLWAY1 = Room('Hallway 1', 'PLAYROOM', 'KITCHEN', None, None, ["Apple", "McChicken"],
                 "Just Some family Pictures and random pictures.")
 
-LIVINGROOM = Room('LivingRoom', None, 'MASTERROOM1', 'KITCHEN',
+LIVINGROOM = Room('LivingRoom', 'OUTSIDE', None, 'HALLWAY2',
                   None, ["Shoes", "Track Suit", "Socks", "Gucci Shirt"], "\n"
                   "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
 
@@ -344,7 +345,7 @@ STREET = Room('Street', None, None, 'TheEnd', 'PORCH', ["Wishing Cake", "Wishing
               'You can see your home and you smell sweet sweet victory')
 
 PORCH = Room('Porch', 'MAINLIVINGROOM', None, 'STREET', None, ["Apple", "Apple"],
-             'You have Done it your outside and theres one other path other than where you came from')
+             'You have Done it your outside and there is one other path other than where you came from')
 
 TheEnd = Room('TheEnd', None, None, None, 'STREET', ["Trophy", "Tier III Boots"], 'Congratulations you one the game')
 
@@ -361,18 +362,18 @@ GARDEN = Room('Garden', None, 'TREEHOUSE', None, None, ["Apple", "Carrot"], 'It 
 OUTSIDE = Room('Outside', None, 'LIVINGROOM', 'TREEHOUSE', None, ["Pick Axe", "Shoes"], 'Looks kinda dead, but it has'
                ' a small playground')
 
-TREEHOUSE = Room('Tree house', None, None, None, None,
-                 ["Key", "Tier III Chestplate", "Tier III Leggings", "Tier III Helment", "Tier III Boots", "Excalibur"],
+TREEHOUSE = Room('Tree house', 'GARDEN', None, None, 'OUTSIDE',
+                 ["Key", "Tier III Chestplate", "Tier III Leggings", "Tier III Helmet", "Tier III Boots", "Excalibur"],
                  "A Room That seems to be small, but looks can be deceiving and its filled with amazing Items.")
 
-HALLWAY2 = Room('Hallway 2', None, None, None, 'DINNINGROOM', ["Apple", "French Fries"],
+HALLWAY2 = Room('Hallway 2', None, None, 'PLAYROOM', 'LIVINGROOM', ["Apple", "French Fries"],
                 "A big wide Hallway That is filled with Pictures ")
 
-DINNINGROOM = ('Dinning Room', None, 'MasterRoom', None, 'Kitchen', ["Apple", "Big Mac"],
-               'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
+DINNINGROOM = Room('Dinning Room', None, 'MASTERROOM', 'KITCHEN', None, ["Apple", "Big Mac"],
+                   'WIth a long table with some fruit ,and 20 chairs and some toys on the ground')
 
-PLAYROOM = ('Play Room', None, None, None, None, ["wood Sword", "Apple", "Shoes", "Gucci Shirt"],
-            'Filled with a ball pit, wood sword, An Apple, some Shoes, and a Gucci Shirt')
+PLAYROOM = Room('Play Room', None, 'HALLWAY1', None, 'HALLWAY2', ["wood Sword", "Apple", "Shoes", "Gucci Shirt"],
+                'Filled with a ball pit, wood sword, An Apple, some Shoes, and a Gucci Shirt')
 
 current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
@@ -408,7 +409,9 @@ while True:
 
     if current_node == PORCH:
         if command in ["south", "s"]:
-            if "key" in Timmy.inventory:
+            if 'Key' in Timmy.inventory:
                 print("You opened the door you may now pass")
             else:
                 print("You can not pass")
+
+
