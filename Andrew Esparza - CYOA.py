@@ -76,7 +76,6 @@ class Tool(Weapon):
         super(Tool, self).__init__(name, value,)
 
 
-
 class Blocks(Item):
     def __init__(self, name, value):
         super(Blocks, self).__init__(name, value)
@@ -100,8 +99,9 @@ class Draw(Item):
 
 
 class Character(Item):
-    def __init__(self, name, value, Description):
+    def __init__(self, name, value):
         super(Character, self).__init__(name, value)
+
 
 class Inventory(Item):
     def __init__(self, name, value):
@@ -152,8 +152,8 @@ class Radio(Item):
     def __init__(self, name, value):
         super(Radio, self).__init__(name, value)
 
-    def singing(self):
-        print("(Song Lyrics)Just Have Mercuyyyy on my heartt...."
+    def sing(self):
+        print("(Song Lyrics)Just Have Mercy... on my heart...."
               "Can I take back And just star all over")
 
 
