@@ -284,7 +284,7 @@ class Characters(object):
             attack = self.health - 1
 
 
-Timmy = Characters('Timmy', None, [Iron_Boots, Iron_Chestplate, Iron_leggings], 'Speed, Jump Boost, weakness',
+Timmy = Characters('Timmy', None, ['Iron Boots', 'Iron Chestplate', 'Iron leggings'], 'Speed, Jump Boost, weakness',
                    100, 'Normal', '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always'
                    'wearing a pink hat', None)
 
@@ -380,6 +380,10 @@ directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
 while True:
+    print("Your heath is at")
+    print(Timmy.health)
+    print(Timmy.inventory)
+    print()
     print(current_node.name)
     print()
     print(current_node.description)
@@ -391,6 +395,13 @@ while True:
     if command == 'die':
         print("Your Died")
         quit(0)
+
+    if command == 'take':
+        
+        print ("You have picked up an item")
+        Timmy.inventory.append()
+
+
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
@@ -413,5 +424,3 @@ while True:
                 print("You opened the door you may now pass")
             else:
                 print("You can not pass")
-
-
