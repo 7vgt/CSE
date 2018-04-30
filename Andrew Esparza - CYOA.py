@@ -247,7 +247,7 @@ Code_Breaker = Tool('Axe', '$1000000')
 
 TreeHouse_Ladder = Ladder('Tree House Ladder', None)
 
-Trophi_end = Item('Trophy', 'Price less')
+Trophy_end = Item('Trophy', 'Price less')
 
 
 class Characters(object):
@@ -396,10 +396,24 @@ while True:
         print("Your Died")
         quit(0)
 
-    if command == 'take':
-        
-        print ("You have picked up an item")
-        Timmy.inventory.append()
+    elif 'take' in command:
+        item_requested = command[5:]
+        for item in current_node.items:
+            if item.name == item_requested:
+                Timmy.inventory(current_node.items)
+
+    elif command == 'take':
+        found = False
+        if len(current_node.items) > 0:
+            for items in current_node.items:
+                print(items.name)
+        CMD = input('What Item?').lower()
+        for items in current_node.items:
+            if CMD == items.name.lower():
+                Timmy.inventory(items)
+                current_node.items.remove(items)
+                found = True
+                print("The items in your inventory")
 
 
     elif command in short_directions:
