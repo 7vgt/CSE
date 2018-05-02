@@ -383,11 +383,11 @@ while True:
     print("Your heath is at")
     print(Timmy.health)
     print(Timmy.inventory)
-    print()
+    print("<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/")
     print(current_node.name)
-    print()
+    print("<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/")
     print(current_node.description)
-    print()
+    print("<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/")
     print("\n".join(current_node.items))
     command = input('>_').lower()
     if command == 'quit':
@@ -396,25 +396,24 @@ while True:
         print("Your Died")
         quit(0)
 
-    elif 'take' in command:
-        item_requested = command[5:]
-        for item in current_node.items:
-            if item.name == item_requested:
-                Timmy.inventory(current_node.items)
-
     elif command == 'take':
         found = False
         if len(current_node.items) > 0:
             for items in current_node.items:
-                print(items.name)
+                print(items)
         CMD = input('What Item?').lower()
         for items in current_node.items:
-            if CMD == items.name.lower():
-                Timmy.inventory(items)
+            if CMD == items.lower():
+                Timmy.inventory.append(CMD)
                 current_node.items.remove(items)
                 found = True
                 print("The items in your inventory")
 
+    elif 'take' in command:
+        item_requested = command[5:]
+        for items in current_node.items:
+            if items.name == item_requested:
+                Timmy.inventory(current_node.items)
 
     elif command in short_directions:
         pos = short_directions.index(command)
