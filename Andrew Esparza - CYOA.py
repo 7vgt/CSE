@@ -375,26 +375,33 @@ DINNINGROOM = Room('Dinning Room', None, 'MASTERROOM', 'KITCHEN', None, ["Apple"
 PLAYROOM = Room('Play Room', None, 'HALLWAY1', None, 'HALLWAY2', ["wood Sword", "Apple", "Shoes", "Gucci Shirt"],
                 'Filled with a ball pit, wood sword, An Apple, some Shoes, and a Gucci Shirt')
 
+Vickys_current_node = LIVINGROOM
 current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
 while True:
+
+    print(current_node.name)
+    print()
+    print(current_node.description)
+    print()
     print("Your heath is at")
     print(Timmy.health)
+    print()
     print(Timmy.inventory)
-    print("<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/")
-    print(current_node.name)
-    print("<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/")
-    print(current_node.description)
-    print("<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/_<o/")
+    print()
     print("\n".join(current_node.items))
     command = input('>_').lower()
     if command == 'quit':
         quit(0)
     if command == 'die':
-        print("Your Died")
+        print("Your Dead")
         quit(0)
+    if command == 'eat':
+        print("you eat Something")
+        input('What Do you want to eat').lower()
+        Timmy.health = 100 + 10
 
     elif command == 'take':
         found = False
@@ -429,6 +436,14 @@ while True:
 
     if current_node.name == 'TheEnd':
         print("You Win")
+        print("       x       ")
+        print("x    + + +    x")
+        print("  + + + + + +  ")
+        print(" + + + + + + + ")
+        print("  + + + + + +  ")
+        print("x    + + +    x")
+        print("       x       ")
+        print("Good Game Good Game Could Have Been Better ,But Deal With It.")
         quit(0)
 
     if current_node == PORCH:
