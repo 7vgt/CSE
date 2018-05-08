@@ -251,7 +251,7 @@ Trophy_end = Item('Trophy', 'Price less')
 
 
 class Characters(object):
-    def __init__(self, name, move, inventory, abilities, health, status, physique, description,
+    def __init__(self, name, move, inventory, abilities, health, status, physique, description, money,
                  eat):
         self.name = name
         self.move = move
@@ -263,6 +263,7 @@ class Characters(object):
         self.description = description
         self.eat = eat
         self.take_damage = health - 1
+        self.money = money
 
     def talk_to_person(self):
         if self.talk:
@@ -286,10 +287,10 @@ class Characters(object):
 
 Timmy = Characters('Timmy', None, ['Iron Boots', 'Iron Chestplate', 'Iron leggings'], 'Speed, Jump Boost, weakness',
                    100, 'Normal', '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always'
-                   'wearing a pink hat', None)
+                   'wearing a pink hat', None, 1000)
 
 Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange'
-                   'hair with a burning look of anger that will frighten anyone', None)
+                   'hair with a burning look of anger that will frighten anyone', None, 0)
 
 
 class Room(object):
@@ -389,6 +390,8 @@ while True:
     print("Your heath is at")
     print(Timmy.health)
     print()
+    print(Timmy.money)
+    print()
     print(Timmy.inventory)
     print()
     print("\n".join(current_node.items))
@@ -400,8 +403,17 @@ while True:
         quit(0)
     if command == 'eat':
         print("you eat Something")
-        input('What Do you want to eat').lower()
+        trash = input('What Do you want to eat').lower()
         Timmy.health = 100 + 10
+        Timmy.inventory.remove(trash)
+    if command == 'Drop':
+        print("You have thrown out a item")
+        dropping = input('what item do you want to throw out.').lower()
+        Timmy.inventory.remove(dropping)
+    if command == 'sell':
+        print("You made money")
+        Selling = input('What do you want to sell')
+        money = Timmy.money + input()
 
     elif command == 'take':
         found = False
