@@ -251,8 +251,7 @@ Trophy_end = Item('Trophy', 'Price less')
 
 
 class Characters(object):
-    def __init__(self, name, move, inventory, abilities, health, status, physique, description, money,
-                 eat):
+    def __init__(self, name, move, inventory, abilities, health, status, physique, description, eat, money):
         self.name = name
         self.move = move
         self.inventory = inventory
@@ -411,9 +410,9 @@ while True:
         dropping = input('what item do you want to throw out.').lower()
         Timmy.inventory.remove(dropping)
     if command == 'sell':
-        print("You made money")
         Selling = input('What do you want to sell')
-        money = Timmy.money + input()
+        Timmy.inventory.remove(Selling)
+        Timmy.money = Timmy.money + 100
 
     elif command == 'take':
         found = False
@@ -446,6 +445,14 @@ while True:
     else:
         print('Command not Recognized')
 
+    if current_node == PORCH:
+        if command in ["south", "s"]:
+            if 'key' in Timmy.inventory:
+                print("You opened the door you may now pass")
+            else:
+                print("You can not pass")
+                quit(0)
+
     if current_node.name == 'TheEnd':
         print("You Win")
         print("       x       ")
@@ -457,10 +464,3 @@ while True:
         print("       x       ")
         print("Good Game Good Game Could Have Been Better ,But Deal With It.")
         quit(0)
-
-    if current_node == PORCH:
-        if command in ["south", "s"]:
-            if 'Key' in Timmy.inventory:
-                print("You opened the door you may now pass")
-            else:
-                print("You can not pass")
