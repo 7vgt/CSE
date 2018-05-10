@@ -389,6 +389,7 @@ while True:
     print("Your heath is at")
     print(Timmy.health)
     print()
+    print("Your Balance")
     print(Timmy.money)
     print()
     print(Timmy.inventory)
@@ -413,6 +414,11 @@ while True:
         Selling = input('What do you want to sell')
         Timmy.inventory.remove(Selling)
         Timmy.money = Timmy.money + 100
+    if command == 'attack':
+        Attacking = Vicky.health - 100
+        Damaged= Timmy.health - Timmy.take_damage
+        print("You have hit something")
+
 
     elif command == 'take':
         found = False
