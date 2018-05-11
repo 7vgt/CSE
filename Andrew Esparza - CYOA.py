@@ -416,9 +416,12 @@ while True:
         Timmy.money = Timmy.money + 100
     if command == 'attack':
         Attacking = Vicky.health - 100
-        Damaged= Timmy.health - Timmy.take_damage
+        Damaged = Timmy.health - Timmy.take_damage
         print("You have hit something")
-
+    if command == 'wear':
+        input("What would you like to wear")
+        Cloths = Item
+        print("You are now wearing %s. It is still in your inventory" % Item)
 
     elif command == 'take':
         found = False
