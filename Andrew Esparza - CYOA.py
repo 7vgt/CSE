@@ -288,7 +288,7 @@ Timmy = Characters('Timmy', None, ['Iron Boots', 'Iron Chestplate', 'Iron leggin
                    100, 'Normal', '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always'
                    'wearing a pink hat', None, 1000)
 
-Vicky = Characters('Vicky', None, None, 'Speed', 1000, 'Speed', '5ft 9Inches', 'She has orange'
+Vicky = Characters('Vicky', None, None, 'Speed', 100, 'Speed', '5ft 9Inches', 'She has orange'
                    'hair with a burning look of anger that will frighten anyone', None, 0)
 
 
@@ -417,7 +417,10 @@ while True:
     if command == 'attack':
         Attacking = Vicky.health - 100
         Damaged = Timmy.health - Timmy.take_damage
-        print("You have hit something")
+        print("You hit vicky in the head")
+        print("It Looks like you knocked vicky out")
+    if current_node == LIVINGROOM:
+        print("Vicky is in this room attack her")
     if command == 'wear':
         input("What would you like to wear")
         Cloths = Item
@@ -465,11 +468,11 @@ while True:
     if current_node.name == 'TheEnd':
         print("You Win")
         print("       x       ")
-        print("x    + + +    x")
-        print("  + + + + + +  ")
-        print(" + + + + + + + ")
-        print("  + + + + + +  ")
-        print("x    + + +    x")
+        print("x    + X +    x")
+        print("  + X + + X +  ")
+        print(" X + + X + + X ")
+        print("  + X + + X +  ")
+        print("x    + X +    x")
         print("       x       ")
         print("Good Game Good Game Could Have Been Better ,But Deal With It.")
         quit(0)
