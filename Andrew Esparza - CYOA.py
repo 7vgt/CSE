@@ -392,7 +392,7 @@ while True:
     print("Your Balance")
     print(Timmy.money)
     print()
-    print(Timmy.inventory)
+    print("\n".join(Timmy.inventory))
     print()
     print("\n".join(current_node.items))
     command = input('>_').lower()
@@ -402,10 +402,10 @@ while True:
         print("Your Dead")
         quit(0)
     if command == 'eat':
-        print("you eat Something")
         trash = input('What Do you want to eat').lower()
         Timmy.health = 100 + 10
         Timmy.inventory.remove(trash)
+        print("you have eaten %s" % trash)
     if command == 'Drop':
         print("You have thrown out a item")
         dropping = input('what item do you want to throw out.').lower()
