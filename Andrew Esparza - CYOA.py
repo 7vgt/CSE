@@ -380,6 +380,16 @@ current_node = VROOM
 directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
+print("The controls are")
+print("Take enter then type what you want to take")
+print("Eat enter then type what you want to eat")
+print("sell enter then type what you want to sell")
+print("Attack Which is basically usless")
+print("Wear enter type items name, which is just to say you are wearing something")
+print("Die which kills you")
+print("Quit stops game")
+print("Drop type what item which basically is throwing it into a black hole and you can't get it back")
+
 while True:
 
     print(current_node.name)
@@ -406,6 +416,9 @@ while True:
         Timmy.health = 100 + 10
         Timmy.inventory.remove(trash)
         print("you have eaten %s" % trash)
+        if trash == 'wishing cake':
+            print("You have been teleported to the Main Living Room")
+            current_node = MAINLIVINGROOM
     if command == 'Drop':
         print("You have thrown out a item")
         dropping = input('what item do you want to throw out.').lower()
@@ -419,6 +432,8 @@ while True:
         Damaged = Timmy.health - Timmy.take_damage
         print("You hit vicky in the head")
         print("It Looks like you knocked vicky out")
+        if Timmy.inventory == Weapon:
+            print("Finish this")
     if current_node == LIVINGROOM:
         print("Vicky is in this room attack her")
     if command == 'wear':
