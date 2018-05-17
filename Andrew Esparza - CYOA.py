@@ -49,10 +49,10 @@ class Potion(Item):
 
 
 class Armour(Item):
-    def __init__(self, name, value, type):
+    def __init__(self, name, value, kind):
         super(Armour, self).__init__(name, value)
         self.durability = 100
-        self.type = type
+        self.kind = kind
 
     def durability_damage(self):
         print("%s you have lost 2 hearts" % self.durability)
@@ -431,9 +431,14 @@ while True:
         Attacking = Vicky.health - 100
         Damaged = Timmy.health - Timmy.take_damage
         print("You hit vicky in the head")
-        print("It Looks like you knocked vicky out")
-        if Timmy.inventory == Weapon:
-            print("Finish this")
+        if current_node == LIVINGROOM:
+            Attacking = True
+            if Vicky.health == 0:
+                print("It looks like vicky is knocked out")
+        else:
+            print("You can not attack from here Better luck next time")
+            quit(0)
+
     if current_node == LIVINGROOM:
         print("Vicky is in this room attack her")
     if command == 'wear':
@@ -470,7 +475,7 @@ while True:
         except KeyError:
             print("You cannot go this way.")
     else:
-        print('Command not Recognized')
+        print()
 
     if current_node == PORCH:
         if command in ["south", "s"]:
