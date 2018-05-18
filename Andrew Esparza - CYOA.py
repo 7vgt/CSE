@@ -381,11 +381,11 @@ directions = ['north', 'south', 'west', 'east']
 short_directions = ['n', 's', 'w', 'e']
 
 print("The controls are")
-print("Take enter then type what you want to take")
-print("Eat enter then type what you want to eat")
-print("sell enter then type what you want to sell")
-print("Attack Which is basically usless")
-print("Wear enter type items name, which is just to say you are wearing something")
+print("Enter Take then type what you want to take")
+print("Enter Eat then type what you want to eat")
+print("Enter sell then type what you want to sell")
+print("Attack Which is basically useless")
+print("Enter Wear type items name, which is just to say you are wearing something")
 print("Die which kills you")
 print("Quit stops game")
 print("Drop type what item which basically is throwing it into a black hole and you can't get it back")
