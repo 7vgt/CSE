@@ -288,7 +288,7 @@ Timmy = Characters('Timmy', None, ['Iron Boots', 'Iron Chestplate', 'Iron leggin
                    100, 'Normal', '4ft 9in, 92P', 'He is kinda short with, blue eyes, buck teeth, And always'
                    'wearing a pink hat', None, 1000)
 
-Vicky = Characters('Vicky', None, None, 'Speed', 100, 'Speed', '5ft 9Inches', 'She has orange'
+Vicky = Characters('Vicky', None, None, 'Speed', 50, 'Speed', '5ft 9Inches', 'She has orange'
                    'hair with a burning look of anger that will frighten anyone', None, 0)
 
 
@@ -321,8 +321,7 @@ MASTERROOM1 = Room('Master Room 1', 'DINNINGROOM', None, None, 'HALLWAY',
 
 MAINLIVINGROOM = Room('Main Living Room', 'KITCHEN', 'PORCH', None, None,
                       ["Shoes", "Jacket", "Socks"],
-                      "Not much here just a couch, a fireplace, and a TV, oh wait oh no don't wake up vicky shes on \n"
-                      "the couch asleep.")
+                      "Not much here just a couch, a fireplace, and a TV")
 
 MOM_DAD = Room("Vicky's Mom And Dads Room", None, 'HALLWAY', None, None, ["Candy", "French Fries"],
                "The room is filled with a bed, nice paintings, and a fur rug ")
@@ -335,7 +334,7 @@ HALLWAY1 = Room('Hallway 1', 'PLAYROOM', 'KITCHEN', None, None, ["Apple", "McChi
 
 LIVINGROOM = Room('LivingRoom', 'OUTSIDE', None, 'HALLWAY2',
                   None, ["Shoes", "Track Suit", "Socks", "Gucci Shirt"], "\n"
-                  "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace")
+                  "There is a couch with 4 tables a smaller 1 seat recliner, and a fireplace, Also Vicky is in here.")
 
 KITCHEN = Room('Kitchen', 'HALLWAY1', 'MAINLIVINGROOM', 'GARAGE', 'DINNINGROOM',
                ["Cookie", "Apple"], 'The Room Is Filled '
@@ -419,28 +418,26 @@ while True:
         if trash == 'wishing cake':
             print("You have been teleported to the Main Living Room")
             current_node = MAINLIVINGROOM
-    if command == 'Drop':
-        print("You have thrown out a item")
+    if command == 'drop':
         dropping = input('what item do you want to throw out.').lower()
         Timmy.inventory.remove(dropping)
+        print("You have thrown out a item")
     if command == 'sell':
         Selling = input('What do you want to sell')
         Timmy.inventory.remove(Selling)
         Timmy.money = Timmy.money + 100
-    if command == 'attack':
-        Attacking = Vicky.health - 100
-        Damaged = Timmy.health - Timmy.take_damage
-        print("You hit vicky in the head")
-        if current_node == LIVINGROOM:
-            Attacking = True
+    if current_node == LIVINGROOM:
+        print("Vicky is in this room")
+        if command == 'attack':
+            Vicky.health -= 100
             if Vicky.health == 0:
                 print("It looks like vicky is knocked out")
-        else:
-            print("You can not attack from here Better luck next time")
-            quit(0)
-
-    if current_node == LIVINGROOM:
-        print("Vicky is in this room attack her")
+            else:
+                print("You can not attack from here")
+                current_node = VROOM
+                if current_node == LIVINGROOM:
+                    attack = True
+                
     if command == 'wear':
         input("What would you like to wear")
         Cloths = Item
@@ -484,6 +481,9 @@ while True:
             else:
                 print("You can not pass")
                 quit(0)
+                if Vicky.health == 50:
+                    print("You can not pass with out killing vicky try again")
+                    current_node = VROOM
 
     if current_node.name == 'TheEnd':
         print("You Win")
