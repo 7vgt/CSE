@@ -163,7 +163,7 @@ Pizza = Food('Pizza', '$13.95', 25)
 
 Cookie = Food('Cookie', '$2.50', 2)
 
-cheese = Food('Cheese', '$100', 20)
+cheese = Food('Cheese', '$100',25)
 
 Wishing_cake = Food('Wishing Cupcake', '$10,000', 100)
 
@@ -256,7 +256,7 @@ class Characters(object):
         self.move = move
         self.inventory = inventory
         self.abilities = abilities
-        self.health = 100
+        self.health = health
         self.status = status
         self.physique = physique
         self.description = description
@@ -408,11 +408,11 @@ while True:
     if command == 'quit':
         quit(0)
     if command == 'die':
-        print("Your Dead")
+        print("You have fall and can't get up, You have died, you should have life alert")
         quit(0)
     if command == 'eat':
         trash = input('What Do you want to eat').lower()
-        Timmy.health = 100 + 10
+        Timmy.health = Timmy.health + 10
         Timmy.inventory.remove(trash)
         print("you have eaten %s" % trash)
         if trash == 'wishing cake':
@@ -421,7 +421,7 @@ while True:
     if command == 'drop':
         dropping = input('what item do you want to throw out.').lower()
         Timmy.inventory.remove(dropping)
-        print("You have thrown out a item")
+        print("You have thrown out a item into the trash a long with fortnite")
     if command == 'sell':
         Selling = input('What do you want to sell')
         Timmy.inventory.remove(Selling)
@@ -465,7 +465,6 @@ while True:
     elif command in short_directions:
         pos = short_directions.index(command)
         command = directions[pos]
-
     if command in directions:
         try:
             current_node.move(command)
@@ -473,7 +472,6 @@ while True:
             print("You cannot go this way.")
     else:
         print()
-
     if current_node == PORCH:
         if command in ["south", "s"]:
             if 'key' in Timmy.inventory:
